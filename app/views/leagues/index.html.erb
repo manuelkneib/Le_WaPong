@@ -1,0 +1,13 @@
+<h1>hello!</h1>
+
+<% @leagues.each do |league| %>
+  <div class="league" style="background: white">
+    <p><%= league.name %></p>
+    <p><%= league.sport %></p>
+    <% if league.creator == current_user %>
+      <%= link_to "Cancel this league" %>
+    <% end %>
+  </div>
+<% end %>
+
+<%= link_to "Create New Tournament", new_league_path %>

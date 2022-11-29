@@ -5,4 +5,8 @@ class Match < ApplicationRecord
   belongs_to :winner, class_name: "User", foreign_key: "winner_id", optional: true
 
   has_many :user_matches
+
+  validates :league_id, presence: true
+  validates :player1_id, presence: true
+  validates :player2_id, presence: true
 end
