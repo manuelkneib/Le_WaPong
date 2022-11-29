@@ -5,4 +5,9 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  # get 'leagues', to: 'leagues#index'
+  # get 'leagues/new', to: 'leagues#new'
+  # get 'leagues/:id', to: 'leagues#show'
+  resources :leagues
+  get "leagues/:id/invitation", to: "leagues#invitation"
 end
