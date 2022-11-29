@@ -6,5 +6,6 @@ class User < ApplicationRecord
 
   has_many :user_leagues
   has_many :user_matches
+  has_many :leagues, through: :user_leagues
   has_many :leagues, foreign_key: "creator_id", class_name: "League"
 end
