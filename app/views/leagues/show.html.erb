@@ -1,0 +1,8 @@
+<h1><%= @league.name %></h1>
+
+<%= league_url %>
+
+<% @league.users.each do |user| %>
+  <p><%= user.email %></p>
+
+<% end %>
