@@ -10,6 +10,7 @@ class User < ApplicationRecord
   has_many :leagues, foreign_key: "creator_id", class_name: "League", dependent: :destroy
 
   validates :email, presence: true, uniqueness: true
-  validates :username, presence: true, uniqueness: true, length: { minimum: 2 }
+  validates :first_name, presence: true, length: { minimum: 2 }
+  validates :last_name, presence: true, length: { minimum: 2 }
   validates :password, presence: true, length: { minimum: 6 }
 end

@@ -16,6 +16,7 @@ class LeaguesController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+    
     UserLeague.create(league: @league, user: current_user)
   end
 
