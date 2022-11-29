@@ -14,7 +14,7 @@ League.destroy_all
 Match.destroy_all
 
 puts "Creating seed base"
-names = ["Ana", "Andre_actor", "Andre_ta", "Andre_teacher", "Barbara", "Carlos", "Catarina", "Chiara", "Dal", "Danilo", "Filipa", "Gabriel_richkid", "Gabriel_ta", "Gerardo", "Guilherme", "Havard", "Henrique", "Ines", "Joao", "Joaquim", "Joe", "Josh", "Julia", "Loic", "Lorenz", "Manu", "Margarida", "Miguel_bald", "Miguel_hairy", "Pedro", "Ricardo", "Rita", "Roel", "Rory", "Ryan", "Sam", "Sara_1leg", "Sara_ta", "Telo", "Vasco_young", "Vasco_old" , "Will", "Zoe"]
+names = ["Ana", "Andre_actor", "Andre_ta", "Andre_teacher", "Barbara", "Carlos", "Catarina", "Chiara", "Dal", "Danilo", "Filipa", "Gabriel_beto", "Gabriel_ta", "Gerardo", "Guilherme", "Havard", "Henrique", "Ines", "Joao", "Joaquim", "Joe", "Josh", "Julia", "Loic", "Lorenz", "Manu", "Margarida", "Miguel_bald", "Miguel_hairy", "Pedro", "Ricardo", "Rita", "Roel", "Rory", "Ryan", "Sam", "Sara_1leg", "Sara_ta", "Telo", "Vasco_young", "Vasco_old" , "Will", "Zoe"]
 i = 0
 
 puts "Creating seed users"
