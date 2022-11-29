@@ -14,19 +14,22 @@ League.destroy_all
 Match.destroy_all
 
 puts "Creating seed base, just starting..."
-names = ["Ana", "Andre_actor", "Andre_ta", "Andre_teacher", "Barbara", "Carlos", "Catarina", "Chiara", "Dal", "Danilo", "Filipa", "Gabriel_beto", "Gabriel_ta", "Gerardo", "Guilherme", "Havard", "Henrique", "Ines", "Joao", "Joaquim", "Joe", "Josh", "Julia", "Loic", "Lorenz", "Manu", "Margarida", "Miguel_bald", "Miguel_hairy", "Pedro", "Ricardo", "Rita", "Roel", "Rory", "Ryan", "Sam", "Sara_1leg", "Sara_ta", "Telo", "Vasco_young", "Vasco_old" , "Will", "Zoe"]
+first_names = ["Ana", "Andre", "Andre", "Andre", "Barbara", "Carlos", "Catarina", "Chiara", "Dal", "Danilo", "Filipa", "Gabriel", "Gabriel", "Gerardo", "Guilherme", "Havard", "Henrique", "Ines", "Joao", "Joaquim", "Joe", "Josh", "Julia", "Loic", "Lorenz", "Manuel", "Margarida", "Miguel", "Miguel", "Pedro", "Ricardo", "Rita", "Roel", "Rory", "Ryan", "Samuel", "Sara", "Sara", "Telo", "Vasco", "Vasco" , "Will", "Zoe"]
+last_names = ["Sousa", "Pires", "Bakiewicz", "Marques", "Peric", "Daniel", "Estevao", "Biasi", "Robinson", "Guimaraes", "Merino", "Fernandes", "Pereira", "Wemans", "Vasconcelos", "Steffensen", "Albuquerque", "Correia", "Sanches", "DePumpo", "Merrill", "Wald", "Thieffry", "Ploch", "Kneib", "Toureiro", "Figueiredo", "Silva", "Agostinho", "Mendes", "Laia", "de Jong", "Carter-Motley", "Hillman", "van de Ven", "Schoonover", "Vieira", "de Castro", "Cardoso", "Correia", "May", "van Perlstein"]
+
 i = 0
 puts "__________________"
 
 puts "Creating seed users, we're getting there..."
 43.times do
   user = User.new(
-    username: names[i],
-    email: "#{names[i].downcase}@lewapong.fun",
+    firstname: first_names[i],
+    lastname: last_names[i],
+    email: "#{first_names[i].downcase}@lewapong.fun",
     password: "123456"
   )
   user.save!
-  puts "#{user.username} - seeded to DB: #{user.save}"
+  puts "#{user.firstname} #{user.lastname} - seeded to DB: #{user.save}"
   i += 1
 end
 puts "__________________"
