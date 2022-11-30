@@ -11,10 +11,15 @@
   </head>
 
   <body>
+
+  <div class="page-container">
+  <main id="main-content">
     <% if controller_name!="pages" && action_name!="home" %>
       <%= render "shared/navbar" %>
     <% end %>
     <%= yield %>
-  </body>
+  </main>
   <%= render "shared/footer" %>
+  </div>
+  </body>
 </html>
