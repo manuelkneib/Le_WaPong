@@ -16,7 +16,6 @@ Match.destroy_all
 puts "Creating seed base, just starting..."
 first_names = ["Ana", "Andre", "Andre", "Andre", "Barbara", "Carlos", "Catarina", "Chiara", "Dal", "Danilo", "Filipa", "Gabriel", "Gabriel", "Gerardo", "Guilherme", "Havard", "Henrique", "Ines", "Joao", "Joaquim", "Joe", "Josh", "Julia", "Loic", "Lorenz", "Manuel", "Margarida", "Miguel", "Miguel", "Pedro", "Ricardo", "Rita", "Roel", "Rory", "Ryan", "Samuel", "Sara", "Sara", "Telo", "Vasco", "Vasco" , "Will", "Zoe"]
 last_names = ["Sousa", "Pires", "Bakiewicz", "Marques", "Peric", "Daniel", "Estevao", "Biasi", "Robinson", "Guimaraes", "Merino", "Fernandes", "Pereira", "Wemans", "Vasconcelos", "Steffensen", "Albuquerque", "Correia", "Sanches", "DePumpo", "Merrill", "Wald", "Thieffry", "Ploch", "Kneib", "Toureiro", "Figueiredo", "Silva", "Agostinho", "Mendes", "Laia", "de Jong", "Carter-Motley", "Hillman", "van de Ven", "Schoonover", "Vieira", "de Castro", "Cardoso", "Correia", "May", "van Perlstein"]
-
 i = 0
 puts "__________________"
 
