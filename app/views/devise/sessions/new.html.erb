@@ -1,7 +1,7 @@
 <div class="container">
 
-  <div class="form-login">
-  <h2>Log in</h2>
+  <div class="form-login" id="form-size">
+  <h2 class="text-center">Log in</h2>
 
   <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: :false }) do |f| %>
     <div class="form-inputs form_info">
@@ -26,7 +26,9 @@
     </div>
   <% end %>
 
-  <%= render "devise/shared/links" %>
+  <div class="ms-5 mt-4">
+    <%= render "devise/shared/links" %>
+  </div>
 
   </div>
 </div>
