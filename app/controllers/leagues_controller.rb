@@ -1,4 +1,5 @@
 class LeaguesController < ApplicationController
+  before_action :set_league, only: %i[show invitation join-league]
   def index
     @leagues = League.joins(:user_leagues).where("user_leagues.user_id = #{current_user.id}")
   end
@@ -10,13 +11,13 @@ class LeaguesController < ApplicationController
   def create
     @league = League.new(league_params)
     @league.creator = current_user
-    @league.users << current_user
-    raise
     if @league.save
       redirect_to leagues_path
     else
       render :new, status: :unprocessable_entity
     end
+
+    UserLeague.create(league: @league, user: current_user, points: 0)
   end
 
   def show
@@ -30,14 +31,17 @@ class LeaguesController < ApplicationController
   end
 
   def invitation
+    @league = League.find(params[:id])
   end
 
-  def join_league
-  end
 
   private
 
   def league_params
     params.require(:league).permit(:name, :sport)
+  end
+
+  def set_league
+    @league = League.find(params[:id])
   end
 end
