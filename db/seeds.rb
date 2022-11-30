@@ -41,23 +41,32 @@ puts ""
 puts "Creating seed leagues, almost there..."
 puts "__________________"
 users = User.all
-count = User.first.id
-sports = ["Ping Pong", "Darts", "Billiard", "Football", "Beer Pong", "Foosball", "Arm wrestling", "Handball", "Weightlifting", "Coding" ]
+sports = ["Ping Pong", "Darts", "Billiard", "Football", "Beer Pong", "Foosball", "Arm wrestling", "Marbles", "Weightlifting", "Coding" ]
 
+creator = User.first.id
 15.times do
   league = League.create!(
     name: "#{Faker::Superhero.power} League",
     sport: sports.sample,
-    creator_id: users.sample.id
+    creator_id: creator
   )
-  10.times do
-    UserLeague.create!(
-      league_id: League.last.id,
-      user_id: User.find(count).id,
-      points: 0
-    )
+  UserLeague.create!(
+    league_id: league.id,
+    user_id: creator,
+    points: 0
+  )
+  9.times do
+    user = users.sample
+    if UserLeague.find_by(user: user, league: league).nil?
+      UserLeague.create!(
+        league_id: league.id,
+        user: user,
+        points: 0
+      )
+      puts "User #{user.email} added to league #{league.name}!"
+    end
   end
-  count += 1
+  creator += 1
   puts "#{league.name} - competing in: #{league.sport} - owned by user: #{User.find(league.creator_id).first_name} - seeded to DB: #{!league.user_leagues.empty?}"
 end
 puts "__________________"
