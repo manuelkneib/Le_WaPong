@@ -1,10 +1,21 @@
-<h1><%= @league.name %></h1>
-<h3><%= @league.sport %></h3>
 
-<%= invitation_url %>
+<div class="container">
+  <div class="form-login" id="form-size">
+    <div class="form-inputs form_info">
 
-<% @league.users.each do |user| %>
-  <p><%= user.email %></p>
+      <div class="form-actions">
+      <h1><%= @league.name %></h1>
+      <h3><%= @league.sport %></h3>
+
+      <%= invitation_url %>
 
 
-<% end %>
+      <% @league.users.each do |user| %>
+      <p><%= user.email %></p>
+
+      <% end %>
+
+    </div>
+  </div>
+ </div>
+</div>

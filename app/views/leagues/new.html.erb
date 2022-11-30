@@ -1,6 +1,17 @@
-<h1>new league</h1>
-<%= simple_form_for @league do |f| %>
-  <%= f.input :name %>
-  <%= f.input :sport %>
-  <%= f.button :submit %>
-<% end %>
+<div class="container">
+  <div class="form-login" id="form-size">
+    <div class="form-inputs form_info">
+
+      <div class="form-actions">
+            <%= simple_form_for @league do |f| %>
+              <%= f.input :name %>
+              <%= f.input :sport %>
+            <div class="form-actions text-center">
+              <%= f.button :submit, "Create", class: "btn btn-primary" %>
+            </div>
+            <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>

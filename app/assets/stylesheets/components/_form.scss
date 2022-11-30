@@ -1,0 +1,47 @@
+
+.form-login {
+  background-color: lightgrey;
+  align-items: center;
+  margin-top: 70px;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 10px 10px 0px 0px;
+  padding-top: 20px;
+  padding-bottom: 80px;
+}
+
+#form-size{
+  height: 90vh;
+  width: 90vw;
+}
+
+.form_info {
+  width: 70%;
+  margin-left: 50px;
+  padding-bottom: 20px;
+}
+
+.email {
+  border-radius: 10px;
+}
+
+.password {
+  border-radius: 10px;
+}
+
+.sign-up-input {
+  border-radius: 10px;
+}
+
+.first-name {
+  border-radius: 10px;
+}
+
+.btn-primary {
+  border: 1px solid white;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5 );
+  background: #FD1015;
+  background: linear-gradient(0deg, #FD1015 0%, rgba(251,75,2,1) 100%);
+  width: 100px;
+}

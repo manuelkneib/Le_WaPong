@@ -1,0 +1,10 @@
+<h1>Hello from league/matches</h1>
+
+<% @max_round.times do |round| %>
+  <% round += 1 %>
+  <p>ROUND: #<%= round %></p>
+  <p>matches:</p>
+  <% @matches.where(round: round).each do |match| %>
+    <p><%= "#{match.player1.first_name} #{match.player1.last_name}" %> vs <%= "#{match.player2.first_name} #{match.player2.last_name}" %></p>
+  <% end %>
+<% end %>

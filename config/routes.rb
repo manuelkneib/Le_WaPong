@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   # get 'leagues/:id', to: 'leagues#show'
   resources :leagues do
     resources :user_leagues, only: :create
+    resources :matches, only: %i[new create index]
   end
   get "leagues/:id/invitation", to: "leagues#invitation", as: :invitation
   # post "leagues/:id/invitation", to: "user_leagues#create",
