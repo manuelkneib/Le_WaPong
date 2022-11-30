@@ -11,6 +11,6 @@ Rails.application.routes.draw do
   resources :leagues do
     resources :user_leagues, only: :create
   end
-  get "leagues/:id/invitation", to: "leagues#invitation"
+  get "leagues/:id/invitation", to: "leagues#invitation", as: :invitation
   # post "leagues/:id/invitation", to: "user_leagues#create",
 end

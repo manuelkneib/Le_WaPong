@@ -16,8 +16,8 @@ class LeaguesController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
-    
-    UserLeague.create(league: @league, user: current_user)
+
+    UserLeague.create(league: @league, user: current_user, points: 0)
   end
 
   def show
