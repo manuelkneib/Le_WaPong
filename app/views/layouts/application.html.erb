@@ -13,13 +13,13 @@
   <body>
 
   <div class="page-container">
-  <main id="main-content">
     <% if controller_name!="pages" && action_name!="home" %>
       <%= render "shared/navbar" %>
     <% end %>
+      <main id="main-content">
     <%= yield %>
-  </main>
-  <%= render "shared/footer" %>
+      </main>
+      <%= render "shared/footer" %>
   </div>
   </body>
 </html>
