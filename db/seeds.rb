@@ -23,7 +23,7 @@ puts "Creating seed users, we're getting there..."
 43.times do
   user = User.new(
     firstname: first_names[i],
-    lastname:last_names[i],
+    lastname: last_names[i],
     email: "#{first_names[i].downcase}@lewapong.fun",
     password: "123456"
   )
