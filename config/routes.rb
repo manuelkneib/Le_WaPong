@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   # get 'leagues', to: 'leagues#index'
   # get 'leagues/new', to: 'leagues#new'
   # get 'leagues/:id', to: 'leagues#show'
-  resources :leagues
-  get "leagues/:id/invitation", to: "leagues#invitation"
+  resources :leagues do
+    resources :user_leagues, only: :create
+  end
+  get "leagues/:id/invitation", to: "leagues#invitation", as: :invitation
+  # post "leagues/:id/invitation", to: "user_leagues#create",
 end

@@ -1,8 +1,10 @@
 <h1><%= @league.name %></h1>
+<h3><%= @league.sport %></h3>
 
-<%= league_url %>
+<%= invitation_url %>
 
 <% @league.users.each do |user| %>
   <p><%= user.email %></p>
+
 
 <% end %>
