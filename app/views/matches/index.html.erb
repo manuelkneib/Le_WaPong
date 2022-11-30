@@ -1,0 +1,8 @@
+<h1>Hello from league/matches</h1>
+
+<% @matches.each do |match| %>
+<p>matches:</p>
+<p><%= "#{match.player1.first_name} #{match.player1.last_name}" %> vs <%= "#{match.player2.first_name} #{match.player2.last_name}" %></p>
+
+
+<% end %>
