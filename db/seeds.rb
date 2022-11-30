@@ -58,7 +58,7 @@ sports = ["Ping Pong", "Darts", "Billiard", "Football", "Beer Pong", "Foosball",
     )
   end
   count += 1
-  puts "#{league.name} - competing in: #{league.sport} - owned by user: #{User.find(league.creator_id).first_name} - seeded to DB: #{!league.user_leagues.empty?} "
+  puts "#{league.name} - competing in: #{league.sport} - owned by user: #{User.find(league.creator_id).first_name} - seeded to DB: #{!league.user_leagues.empty?}"
 end
 puts "__________________"
 puts ""
