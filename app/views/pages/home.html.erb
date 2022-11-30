@@ -1,4 +1,9 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="logohome">
+  <%= link_to leagues_path do %>
+    <%= image_tag("logo_landing", :class => "logohome")%>
+  <% end %>
+</div>
 
-<%= link_to "See Your Leagues", leagues_path %>
+<div class="d-flex justify-content-center">
+  <%= link_to "Start", leagues_path, class: "btn btn-start" %>
+</div>
