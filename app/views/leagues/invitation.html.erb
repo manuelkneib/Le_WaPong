@@ -1,3 +1,4 @@
 <%# <%= link_to "Accept", accept_invitation_path(league, user_id: current_user.id), method: "POST" %>
+
 <h1>Hello! <%= @league.creator.email %> has invitated you to participate in <%= @league.name %></h1>
 <%= link_to "Accept", league_user_leagues_path(@league), data: {turbo_method: :post} %>
