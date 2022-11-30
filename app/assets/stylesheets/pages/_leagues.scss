@@ -1,0 +1,55 @@
+.league{
+  border-radius: 10px;
+  text-align: center;
+  padding: 10px;
+  color: #253244;
+  margin-bottom: 20px;
+
+}
+
+.avatar-index{
+  margin-left: 0px;
+  width: 120px;
+  border-radius: 50%;
+  margin-top:30px
+}
+
+.index-league{
+  color: white;
+}
+
+.infos-index{
+  margin-top: 50px;
+}
+
+.your-tournament{
+  width: 100%;
+  text-align: left;
+  margin-top: 50px;
+ }
+
+ .league{
+  color: #253244;
+ }
+
+ .league{
+  font-weight: bold;
+ }
+
+ .new-tournament{
+  color:white;
+  margin-top: 50px;
+ }
+
+ .btn-flat{
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #E60F05;
+  transition: background 0.3s ease;
+}
+
+.btn-flat:hover {
+  background: #6C6C6C;
+  color: white;
+}

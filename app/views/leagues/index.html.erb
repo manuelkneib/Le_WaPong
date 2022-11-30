@@ -1,17 +1,42 @@
-<h1>hello!</h1>
+<div class= "container page">
+  <div class= "index-league">
+    <div class= "row profile-infos">
+      <div class="col-sm-6">
+        <div class="avatar-index">
+        <%= render "shared/avatar" %>
+        </div>
 
+      </div>
+      <div class="col-sm-6">
+        <div class="infos-index">
+        <h1>hello <%= current_user.first_name %>!</h1>
+        <h2><%=current_user.email%></h2>
+        <p>INFOS ? </p>
+        </div>
+      </div>
+    </div>
 
-<% @leagues.each do |league| %>
+    <div class="new-tournament" >
+        <%# <%= link_to "Create New Tournament", new_league_path %>
+        <a class="btn btn-flat create-tournament" href="/leagues/new">Create New Tournament</a>
+    </div>
 
-  <div class="league" style="background: white">
+    <div class="your-tournament">
+      <h3> Your Tournament</h3>
+        <% @leagues.each do |league| %>
 
-    <p><%= league.name %></p>
-    <p><%= league.sport %></p>
-    <% if league.creator == current_user %>
-      <%= link_to "Cancel this league" %>
-    <% end %>
-    <p><%= link_to "See details", league_path(league) %></p>
+      <div class="league" style="background: white">
+
+        <p><%= league.name %></p>
+        <p><%= league.sport %></p>
+          <% if league.creator == current_user %>
+            <%= link_to "Cancel this league" %>
+          <% end %>
+        <p><%= link_to "See details", league_path(league) %></p>
+      </div>
+
+      <% end %>
+
+    </div>
   </div>
-<% end %>
-
-<%= link_to "Create New Tournament", new_league_path %>
+</div>
