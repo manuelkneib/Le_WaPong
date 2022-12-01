@@ -44,7 +44,7 @@ users = User.all
 sports = ["Ping Pong", "Darts", "Billiard", "Football", "Beer Pong", "Foosball", "Arm wrestling", "Marbles", "Weightlifting", "Coding" ]
 
 creator = User.first.id
-15.times do
+43.times do
   league = League.create!(
     name: "#{Faker::Superhero.power} League",
     sport: sports.sample,
@@ -55,6 +55,7 @@ creator = User.first.id
     user_id: creator,
     points: 0
   )
+  puts "#{league.name} - competing in: #{league.sport} - owned by user: #{User.find(league.creator_id).first_name} - seeded to DB: #{!league.user_leagues.empty?}"
   9.times do
     user = users.sample
     if UserLeague.find_by(user: user, league: league).nil?
@@ -63,11 +64,11 @@ creator = User.first.id
         user: user,
         points: 0
       )
-      puts "User #{user.email} added to league #{league.name}!"
+      puts "User #{user.email} added to #{league.name}!"
     end
   end
   creator += 1
-  puts "#{league.name} - competing in: #{league.sport} - owned by user: #{User.find(league.creator_id).first_name} - seeded to DB: #{!league.user_leagues.empty?}"
+
 end
 puts "__________________"
 puts ""
