@@ -1,10 +1,16 @@
+.welcome-login {
+  color: $light;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
 
 .form-login {
-  background-color: lightgrey;
+  box-shadow: 0 3px 10px rgb(255, 255, 255);
+  margin-left: 5px;
+  background-color: $light;
   align-items: center;
-  margin-top: 70px;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-top: 40px;
   border-radius: 10px 10px 0px 0px;
   padding-top: 20px;
 
@@ -22,15 +28,23 @@
 
 }
 
+.form-control {
+background-color: white;
+}
+
 #form-size{
-  height: 90vh;
+  height: 70vh;
   width: 90vw;
 }
 
 .form_info {
-  width: 70%;
+  width: 70vw;
   margin-left: 50px;
   padding-bottom: 20px;
+}
+
+.form-inputs {
+  margin-left: 40px;
 }
 
 .email {
