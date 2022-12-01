@@ -26,13 +26,14 @@
         <% @leagues.each do |league| %>
 
       <div class="league" style="background: white">
-
         <p><%= league.name %></p>
         <p><%= league.sport %></p>
-          <% if league.creator == current_user %>
-            <%= link_to "Cancel this league" %>
-          <% end %>
+<%= image_tag "pingpong-image.png" %>
         <p><%= link_to "See details", league_path(league) %></p>
+          <% if league.creator == current_user %>
+            <%= link_to "Cancel this league", league, data: { 'turbo-method': :delete, 'turbo-confirm': 'Are you sure?' } %>
+
+          <% end %>
       </div>
 
       <% end %>
