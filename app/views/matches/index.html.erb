@@ -2,9 +2,16 @@
 
 <% @max_round.times do |round| %>
   <% round += 1 %>
-  <p>ROUND: #<%= round %></p>
-  <p>matches:</p>
-  <% @matches.where(round: round).each do |match| %>
-    <p><%= "#{match.player1.first_name} #{match.player1.last_name}" %> vs <%= "#{match.player2.first_name} #{match.player2.last_name}" %></p>
-  <% end %>
+  <div class="overall-match"  style="background-color: white" data-controller="pick-winner">
+    <p>ROUND: #<%= round %></p>
+      <% @matches.where(round: round).each do |match| %>
+    <div class="match">
+    <form class="new_book" id="new_book" action="/books" method="post">
+        <div class="player1" data-pick-winner-target="player" data-action="click->pick-winner#send"><%= "#{match.player1.first_name} #{match.player1.last_name}" %> </div>
+        <div class="vs">vs</div>
+        <div class="player2" data-pick-winner-target="player" data-action="click->pick-winner#send"><%= "#{match.player2.first_name} #{match.player2.last_name}" %></div>
+        <input type="submit" name="commit" value="Validate" data-disable-with="Create">
+    </div>
+      <% end %>
+  </div>
 <% end %>
