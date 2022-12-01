@@ -1,10 +1,33 @@
 <h1>Hello from league/matches</h1>
+<div class="overall-matches">
+  <% @max_round.times do |round| %>
+    <% round += 1 %>
+    <div class="form-action"></div>
+    <div class=round data-controller="pick-winner">
+      <p>ROUND: #<%= round %></p>
+      <% @matches.where(round: round).each do |match| %>
+        <div class="match align-items-center">
+          <div>
+            <% if match.winner != match.player1 && match.winner.nil? %>
+              <%= link_to "winner", setwinner_match_path(match, winner_id: match.player1), data: { turbo_method: :post } %>
+            <% end %>
+            <div class="player1 <%= "btn winner" if match.player1 == match.winner %>" data-pick-winner-target="player" data-action="click->pick-winner#send">
+              <%= "#{match.player1.first_name} #{match.player1.last_name}" %>
+            </div>
+          </div>
 
-<% @max_round.times do |round| %>
-  <% round += 1 %>
-  <p>ROUND: #<%= round %></p>
-  <p>matches:</p>
-  <% @matches.where(round: round).each do |match| %>
-    <p><%= "#{match.player1.first_name} #{match.player1.last_name}" %> vs <%= "#{match.player2.first_name} #{match.player2.last_name}" %></p>
+          <div class="vs">vs</div>
+
+          <div>
+            <% if match.winner != match.player2 && match.winner.nil? %>
+              <%= link_to "winner", setwinner_match_path(match, winner_id: match.player2), data: { turbo_method: :post } %>
+            <% end %>
+            <div class="player2 <%= "btn winner" if match.player2 == match.winner %>" data-pick-winner-target="player" data-action="click->pick-winner#send">
+              <%= "#{match.player2.first_name} #{match.player2.last_name}" %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
   <% end %>
-<% end %>
+</div>

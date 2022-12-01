@@ -7,14 +7,16 @@
       <h1><%= @league.name %></h1>
       <h3><%= @league.sport %></h3>
 
-      <%= invitation_url %>
+      <p><%= invitation_url %></p>
 
+      <p><%= link_to "See matches", league_matches_path(@league) %></p>
 
       <% @league.users.each do |user| %>
-      <p><%= user.email %></p>
+        <p><%= user.email %></p>
 
       <% end %>
 
+      <%= link_to "Set Matches!", league_matches_path(@league), data: { turbo_method: :post } %>
     </div>
   </div>
  </div>
