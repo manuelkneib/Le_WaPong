@@ -1,1 +1,28 @@
 
+
+.details-card {
+    border-radius: 20px;
+    background-color: lightgrey;
+    align-items: center;
+    margin-top: 70px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-top: 20px;
+}
+
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
