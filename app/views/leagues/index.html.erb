@@ -31,7 +31,8 @@
 <%= image_tag "pingpong-image.png" %>
         <p><%= link_to "See details", league_path(league) %></p>
           <% if league.creator == current_user %>
-            <%= link_to "Cancel this league" %>
+            <%= link_to "Cancel this league", league, data: { 'turbo-method': :delete, 'turbo-confirm': 'Are you sure?' } %>
+
           <% end %>
       </div>
 
