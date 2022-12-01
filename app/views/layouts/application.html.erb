@@ -19,11 +19,11 @@
       <main id="main-content">
         <%= yield %>
       </main>
-    </div>
 
-    <% if (controller_name!="pages" && action_name!="home") && (controller_name!="sessions" && action_name!="new") && (controller_name!="registrations" && action_name!="new") %>
-      <%= render "shared/footer" %>
-    <% end %>
+     <% if (controller_name!="pages" && action_name!="home") && (controller_name!="sessions" && action_name!="new") && (controller_name!="registrations" && action_name!="new") %>
+         <%= render "shared/footer" %>
+     <% end %>
+    </div>
   </body>
 
 
