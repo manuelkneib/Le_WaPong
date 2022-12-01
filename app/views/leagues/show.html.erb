@@ -12,10 +12,11 @@
       <p><%= link_to "See matches", league_matches_path(@league) %></p>
 
       <% @league.users.each do |user| %>
-      <p><%= user.email %></p>
+        <p><%= user.email %></p>
 
       <% end %>
 
+      <%= link_to "Set Matches!", league_matches_path(@league), data: { turbo_method: :post } %>
     </div>
   </div>
  </div>

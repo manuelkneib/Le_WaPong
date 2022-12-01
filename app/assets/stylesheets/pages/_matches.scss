@@ -1,7 +1,19 @@
+.overall-matches {
+  background-color: #D3D3D3;
+  padding: 5px;
+  margin: 70px 10px 0px 10px;
+  border-radius: 10px 10px 0px 0px ;
+}
+
 .match {
-  background-color: aquamarine;
   display: flex;
   justify-content: space-between;
+}
+.round {
+  background-color: white;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 20px;
 }
 .player1 {
   display: flex;
