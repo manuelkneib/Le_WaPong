@@ -2,29 +2,39 @@
 <div class="container">
       <%= link_to 'Back', leagues_path, class: "backlink" %>
 
-  <h1 class=" text-center text-white mt-5 mb-4"> See details of your league and invite your friends!
+  <h1 class="text-center text-white mt-5 mb-4"> See details of your league and invite your friends!
   </h1>
 
-  <div class="details-card">
-      <div class="card text-center">
-      <h2> Your league:</h2>
-      <%= @league.name %>
-      <h2> Sport:</h2>
-      <%= @league.sport %>
-      <p>Share this link: </p>
-      <%= invitation_url %>
-      <% @league.users.each do |user| %>
-      <p>Owner:</p>
-      <%= user.email %>
-      <% end %>
 
-      <p><%= link_to "See matches", league_matches_path(@league) %></p>
+      <div class="details-card">
 
-      <%= link_to "Set Matches!", league_matches_path(@league), data: { turbo_method: :post } %>
+        <h3> Your league:
+          <%= @league.name %>
+        </h3>
 
-    </div>
-  </div>
- </div>
+        <h3> Sport:
+          <%= @league.sport %>
+        </h3>
+        <p>~</p>
+        <p>Share this link: </p>
+        <p>
+          <%= invitation_url %>
+        </p>
+        <p>
+          <% @league.users.each do |user| %>~
+        </p>
+        <p>Owner:</p>
+        <p>
+          <%= user.email %>
+        </p>
+        <% end %>
+
+       </div>
+
+      <div class="text-color-link">
+        <%= link_to "See matches", league_matches_path(@league) %>
+        <%= link_to "Set Matches!", league_matches_path(@league), data: { turbo_method: :post } %>
+      </div>
 
 </div>
 
