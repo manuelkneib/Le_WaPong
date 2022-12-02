@@ -1,11 +1,21 @@
+
 .details-card {
-    border-radius: 20px;
-    background-color: lightgrey;
-    align-items: center;
-    margin-top: 70px;
-    margin-left: 10px;
-    margin-right: 10px;
-    padding-top: 20px;
+  text-align: center;
+  border-radius: 20px;
+  background-color: $light;
+  align-items: center;
+  margin-top: 40px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-top: 20px;
+  border: 2px solid red;
+  box-shadow: 1px 1px 7px lightgray;
+  line-height: 8px;
+  margin-bottom: 20px;
+}
+
+.details-card p {
+font-size: 16px;
 }
 
 .backlink {
@@ -14,6 +24,7 @@
 }
 
 table {
+  margin-top: 20px;
   font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 100%;
@@ -27,4 +38,12 @@ td, th {
 
 tr:nth-child(even) {
   background-color: #dddddd;
+}
+
+
+text-color-link {
+  a {
+    color: white;
+
+  }
 }
