@@ -5,7 +5,6 @@
   <h1 class="text-center text-white mt-5 mb-4"> See details of your league and invite your friends!
   </h1>
 
-
       <div class="details-card">
 
         <h3> Your league:
@@ -36,25 +35,25 @@
         <%= link_to "Set Matches!", league_matches_path(@league), data: { turbo_method: :post } %>
       </div>
 
+
 </div>
 
   <table>
     <tr>
-      <th>Position</th>
+      <th>#</th>
       <th>Players</th>
-      <th>Score Balance</th>
       <th>Wins</th>
+      <th>Points</th>
     </tr>
-    <tr>
-      <td>1</td>
-      <td>name</td>
-      <td>345</td>
-      <td>7</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>name 4</td>
-      <td>377</td>
-      <td>8</td>
-    </tr>
-  </table>
+      <% i = 1 %>
+  <% @leaderboard_players.order("points DESC").each do |player| %>
+      <tr>
+        <td><%= i %></td>
+        <td><%= player.first_name %> <%= player.last_name %></td>
+        <% u_l = @league.user_leagues.where("user_id = #{player.id}").first %>
+        <td><%= u_l.points / 3 %></td>
+        <td><%= u_l.points %></td>
+      </tr>
+      <% i += 1 %>
+  <% end %>
+    </table>
