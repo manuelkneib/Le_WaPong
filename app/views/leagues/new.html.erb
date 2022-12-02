@@ -10,6 +10,7 @@
               <%= f.input :name %>
               <%= f.input :sport, :collection => ['Ping-Pong', 'Tennis', 'Darts', 'Billiard','Football','Beer Pong','Foosball', "Weightlifting", 'Karts', 'Karaoke'] %>
             <div class="form-actions text-center">
+
               <%= f.button :submit, "Create", class: "btn btn-primary mt-5" %>
             </div>
           <% end %>
@@ -31,13 +32,8 @@
             <i class="fa-solid fa-microphone-lines fa-2xl"></i>
           </div>
         </div>
-        
-            <div class="form-actions text-center">
-          <a class="btn" href="/leagues/1">
-              <%= f.button :submit, "Create", class: "btn btn-primary mt-5" %>
-          </a>
-            </div>
-            <% end %>
+
+
 
     </div>
   </div>
