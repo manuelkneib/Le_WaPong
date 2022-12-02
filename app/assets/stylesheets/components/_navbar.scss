@@ -4,20 +4,22 @@
 
 .navbar-logo {
   margin: auto;
+  width: 60px;
+  max-height: 60px;
 
   .logo_image {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 10px;
-    width: 30%;
+    margin-top: -25px;
+    width: 90%;
   }
 }
 
 .hamburger-navbar {
   position: absolute;
   left: 10px;
-  top: 25px;
+  top: 20px;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -30,5 +32,3 @@
   top: 75px;
   background: white;
 }
-
-

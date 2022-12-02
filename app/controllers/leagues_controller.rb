@@ -1,5 +1,5 @@
 class LeaguesController < ApplicationController
-  before_action :set_league, only: %i[show invitation join-league]
+  before_action :set_league, only: %i[show invitation join-league destroy]
   def index
     @leagues = League.joins(:user_leagues).where("user_leagues.user_id = #{current_user.id}")
   end

@@ -20,6 +20,11 @@
       <%= user.email %>
 
       <% end %>
+
+      <p><%= link_to "See matches", league_matches_path(@league) %></p>
+
+      <%= link_to "Set Matches!", league_matches_path(@league), data: { turbo_method: :post } %>
+
     </div>
   </div>
  </div>

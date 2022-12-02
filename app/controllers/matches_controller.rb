@@ -1,12 +1,9 @@
 class MatchesController < ApplicationController
   def index
     @league = League.find(params[:league_id])
-
     @players = @league.users
-
-    set_league_matches
-
-    @matches = Match.where(league: @league)
+    @matches = Match.where(league: @league).order("matches.id ASC")
+    @max_round = @matches.maximum(:round)
   end
 
   def new
@@ -14,8 +11,20 @@ class MatchesController < ApplicationController
   end
 
   def create
-    # @league = League.find(params[:league_id])
-    @match = Match.new()
+    @league = League.find(params[:league_id])
+    @players = @league.users
+
+    set_league_matches
+
+    redirect_to league_matches_path(@league)
+  end
+
+  def setwinner
+    match = Match.find(params[:id])
+    match.winner = User.find(params[:winner_id])
+    match.save
+
+    redirect_to league_matches_path(match.league)
   end
 
   private

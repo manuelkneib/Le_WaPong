@@ -1,5 +1,5 @@
 <div class= "container page">
-  <div class= "index-league">
+  <div class= "row index-league">
     <div class= "row profile-infos">
       <div class="col-sm-6">
         <div class="avatar-index">
@@ -12,32 +12,34 @@
         <h1>hello <%= current_user.first_name %>!</h1>
         <h2><%=current_user.email%></h2>
         <p>INFOS ? </p>
+        <div class="new-tournament" >
+          <a class="btn btn-flat create-tournament" href="/leagues/new">Create new League</a>
+        </div>
         </div>
       </div>
     </div>
 
-    <div class="new-tournament" >
-        <%# <%= link_to "Create New Tournament", new_league_path %>
-        <a class="btn btn-flat create-tournament" href="/leagues/new">Create New Tournament</a>
-    </div>
 
     <div class="your-tournament">
       <h3> Your Tournament</h3>
-        <% @leagues.each do |league| %>
 
-      <div class="league" style="background: white">
-        <p><%= league.name %></p>
-        <p><%= league.sport %></p>
-<%= image_tag "pingpong-image.png" %>
-        <p><%= link_to "See details", league_path(league) %></p>
-          <% if league.creator == current_user %>
-            <%= link_to "Cancel this league", league, data: { 'turbo-method': :delete, 'turbo-confirm': 'Are you sure?' } %>
+      <% @leagues.each do |league| %>
+      <div class="leagues" style="background: white">
+      <div>
+        <p class="p-name-league"><%= league.name %></p>
+        <p class="p-sport-league"><%= league.sport %></p>
+        </div>
+        <div class="league-index-details">
+        <% if league.creator == current_user %>
+          <%= link_to "X", league_path(league), class: "btn-cancel", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this league?" } %>
+        <% end %>
 
-          <% end %>
+        <%# <p><%=link_to "See details", league_path(league) %></p>
+        </div>
+
       </div>
 
       <% end %>
-
     </div>
   </div>
 </div>
