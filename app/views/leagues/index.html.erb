@@ -20,12 +20,14 @@
     </div>
 
 
+
+  <div class="everything">
     <div class="your-tournament">
       <h3> Your Tournament</h3>
 
       <% @leagues.each do |league| %>
       <div class="leagues" style="background: white">
-      <div>
+        <div>
         <p class="p-name-league"><%= league.name %></p>
         <p class="p-sport-league"><%= league.sport %></p>
         </div>
@@ -34,12 +36,15 @@
           <%= link_to "X", league_path(league), class: "btn-cancel", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this league?" } %>
         <% end %>
 
-        <%# <p><%=link_to "See details", league_path(league) %></p>
+        <%# <p><%=link_to "See details", league_path(league) %>
         </div>
-
       </div>
 
       <% end %>
+
+  </div>
+
+
     </div>
   </div>
 </div>

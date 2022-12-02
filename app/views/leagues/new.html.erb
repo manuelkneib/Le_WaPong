@@ -9,6 +9,7 @@
             <%= simple_form_for @league do |f| %>
               <%= f.input :name %>
               <%= f.input :sport, :collection => ['Ping-Pong', 'Tennis', 'Darts', 'Billiard','Football','Beer Pong','Foosball', "Weightlifting", 'Karts', 'Karaoke'] %>
+
               <div class="form-actions text-center">
                 <%= f.button :submit, "Create", class: "btn btn-primary mt-5" %>
               </div>
