@@ -11,14 +11,11 @@
       <%= @league.name %>
       <h2> Sport:</h2>
       <%= @league.sport %>
-
       <p>Share this link: </p>
       <%= invitation_url %>
-
       <% @league.users.each do |user| %>
       <p>Owner:</p>
       <%= user.email %>
-
       <% end %>
 
       <p><%= link_to "See matches", league_matches_path(@league) %></p>

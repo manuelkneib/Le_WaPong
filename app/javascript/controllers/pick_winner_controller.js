@@ -1,4 +1,4 @@
-import { Controller } from "@hotwired/stimulus"
+/* import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="pick-winner"
 export default class extends Controller {
@@ -22,4 +22,4 @@ export default class extends Controller {
   //     })
   // }
 
-}
+}} */
