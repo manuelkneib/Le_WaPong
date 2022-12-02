@@ -9,6 +9,8 @@
   display:flex;
   justify-content: space-between;
   align-items: flex-start;
+  margin-left: 25px;
+  margin-right: 25px;
 
 }
 
@@ -35,12 +37,13 @@
 }
 .your-tournament{
   width: 100%;
-  margin: 65px 25px 50px 25px;
-  background-color: #ddd8d8;
+  margin: 50px 25px 50px 25px;
+  background-color: #e6e0de;;
   border-radius: 5px;
   text-align: center;
   padding: 5px;
   color: #253244;
+  box-shadow: 0 3px 10px white;
  }
 
  .league{
@@ -55,20 +58,24 @@
 
  .btn-flat{
   color: white;
-  padding: 4px 6px;
-  border-radius: 4px;
+  padding: 8px 24px;
+  border-radius: 20px;
   background: #E60F05;
   transition: background 0.3s ease;
   margin: auto;
+  background: linear-gradient(0deg, #FD1015 0%, #fb4b02 100%);
+  border: 1px solid white;
+  box-shadow: 1px 1px 7px lightgray;
+
 }
 
 .btn-cancel{
-background-color:#6C6C6C;
+background-color: #E60F05;
+background: linear-gradient(0deg, #FD1015 0%, #fb4b02 100%);
 color: white;
 border-radius: 5px;
 text-decoration: none;
 padding: 1px 4px 0px ;
-
 
 }
 
@@ -107,4 +114,8 @@ padding: 1px 4px 0px ;
 .text-infos-index{
   font-size: 11px;
   font-weight: 200;
+}
+
+.everything {
+  margin-right: 43px;
 }

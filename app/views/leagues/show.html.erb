@@ -1,23 +1,50 @@
 
 <div class="container">
-  <div class="form-login" id="form-size">
-    <div class="form-inputs form_info">
+      <%= link_to 'Back', leagues_path, class: "backlink" %>
 
-      <div class="form-actions">
-      <h1><%= @league.name %></h1>
-      <h3><%= @league.sport %></h3>
+  <h1 class=" text-center text-white mt-5 mb-4"> See details of your league and invite your friends!
+  </h1>
 
-      <p><%= invitation_url %></p>
+  <div class="details-card">
+      <div class="card text-center">
+      <h2> Your league:</h2>
+      <%= @league.name %>
+      <h2> Sport:</h2>
+      <%= @league.sport %>
+      <p>Share this link: </p>
+      <%= invitation_url %>
+      <% @league.users.each do |user| %>
+      <p>Owner:</p>
+      <%= user.email %>
+      <% end %>
 
       <p><%= link_to "See matches", league_matches_path(@league) %></p>
 
-      <% @league.users.each do |user| %>
-        <p><%= user.email %></p>
-
-      <% end %>
-
       <%= link_to "Set Matches!", league_matches_path(@league), data: { turbo_method: :post } %>
+
     </div>
   </div>
  </div>
+
 </div>
+
+  <table>
+    <tr>
+      <th>Position</th>
+      <th>Players</th>
+      <th>Score Balance</th>
+      <th>Wins</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>name</td>
+      <td>345</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>name 4</td>
+      <td>377</td>
+      <td>8</td>
+    </tr>
+  </table>
