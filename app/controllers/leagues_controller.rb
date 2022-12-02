@@ -1,5 +1,5 @@
 class LeaguesController < ApplicationController
-  before_action :set_league, only: %i[show invitation join-league destroy]
+  before_action :set_league, only: %i[show invitation join-league destroy set_points]
   def index
     @leagues = League.joins(:user_leagues).where("user_leagues.user_id = #{current_user.id}")
   end
@@ -22,6 +22,8 @@ class LeaguesController < ApplicationController
 
   def show
     @league = League.find(params[:id])
+    set_points
+    @leaderboard_players = User.joins(:user_leagues).where("user_leagues.league_id = #{@league.id}")
   end
 
   def destroy
@@ -43,5 +45,16 @@ class LeaguesController < ApplicationController
 
   def set_league
     @league = League.find(params[:id])
+  end
+
+  def set_points
+    @players = @league.user_leagues
+    @players.each do |player|
+      @wins = @league.matches.where("winner_id = #{player.user_id}").count
+      points = @wins * 3
+      player.points = points
+      player.save
+    end
+    @wins
   end
 end

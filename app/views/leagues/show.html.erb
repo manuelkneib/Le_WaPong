@@ -13,10 +13,7 @@
       <%= @league.sport %>
       <p>Share this link: </p>
       <%= invitation_url %>
-      <% @league.users.each do |user| %>
-      <p>Owner:</p>
-      <%= user.email %>
-      <% end %>
+
 
       <p><%= link_to "See matches", league_matches_path(@league) %></p>
 
@@ -30,21 +27,20 @@
 
   <table>
     <tr>
-      <th>Position</th>
+      <th>#</th>
       <th>Players</th>
-      <th>Score Balance</th>
       <th>Wins</th>
+      <th>Points</th>
     </tr>
-    <tr>
-      <td>1</td>
-      <td>name</td>
-      <td>345</td>
-      <td>7</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>name 4</td>
-      <td>377</td>
-      <td>8</td>
-    </tr>
-  </table>
+      <% i = 1 %>
+  <% @leaderboard_players.order("points DESC").each do |player| %>
+      <tr>
+        <td><%= i %></td>
+        <td><%= player.first_name %> <%= player.last_name %></td>
+        <% u_l = @league.user_leagues.where("user_id = #{player.id}").first %>
+        <td><%= u_l.points / 3 %></td>
+        <td><%= u_l.points %></td>
+      </tr>
+      <% i += 1 %>
+  <% end %>
+    </table>
