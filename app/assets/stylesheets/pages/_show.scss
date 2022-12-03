@@ -1,13 +1,13 @@
 .details-card {
   text-align: center;
-  border-radius: 20px;
+  border-radius: 10px;
   background-color: $light;
   align-items: center;
-  margin-top: 40px;
+  margin-top: 30px;
   margin-left: 10px;
   margin-right: 10px;
-  padding-top: 20px;
-  border: 2px solid red;
+  padding-top: 10px;
+  padding-bottom: 10px;
   box-shadow: 1px 1px 7px lightgray;
   line-height: 8px;
   margin-bottom: 20px;
@@ -39,7 +39,8 @@ tr:nth-child(even) {
   background-color: #dddddd;
 }
 
-text-color-link {
+.text-color-link {
+  text-align: center;
   a {
     color: white;
   }
