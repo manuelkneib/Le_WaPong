@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <%# <title><%= meta_title %><%# </title> %>
-    <%# <meta name="description" content="<%= meta_description %>
+    <title><%= meta_title %></title>
+    <meta name="description" content="<%= meta_description %>">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
@@ -12,7 +12,12 @@
     <%= csp_meta_tag %>
     <%= favicon_link_tag "favicon.png", rel: "icon", type: "image/png" %>
 
-    <%# reinstate facebook meta here %>
+    <meta property="og:title" content="<%= meta_title %>">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="<%= request.original_url %>">
+    <meta property="og:image" content="<%= meta_image %>">
+    <meta property="og:description" content="<%= meta_description %>">
+    <meta property="og:site_name" content="<%= meta_title %>">
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
