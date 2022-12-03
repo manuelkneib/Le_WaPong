@@ -1,5 +1,6 @@
 <%# not sure about how to put it as url, need 'a' instead of 'link to' in order to display font-awesome arrow... %>
-<a href="/leagues/:league_id"><i class="fa-solid fa-chevron-left"></i></a>
+<a href= "/leagues/<%=@league.id%>" ><i class="fa-solid fa-chevron-left"></i></a>
+
 <div class="overall-matches">
   <% @max_round.times do |round| %>
     <% round += 1 %>
