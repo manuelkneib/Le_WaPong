@@ -33,14 +33,15 @@
 }
 
 .profile-infos{
-  display: flex;
+  display: block;
+  margin: auto;
 }
 
 .your-tournament{
   width: 100%;
-  margin: 50px 25px 50px 25px;
+  margin: 40px 25px 50px 25px;
   background-color: #e6e0de;;
-  border-radius: 5px;
+  border-radius: 10px 10px 10px 10px;
   text-align: center;
   padding: 5px;
   color: #253244;
