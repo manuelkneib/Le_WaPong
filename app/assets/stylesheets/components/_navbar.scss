@@ -1,11 +1,13 @@
 .navbar-lewagon {
-  background: white;
+  background: $blue;
+
 }
 
 .navbar-logo {
   margin: auto;
   width: 60px;
   max-height: 60px;
+  margin-bottom: 8px;
 
   .logo_image {
     display: block;

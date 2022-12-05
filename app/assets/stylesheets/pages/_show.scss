@@ -1,17 +1,3 @@
-.details-card {
-  text-align: center;
-  border-radius: 10px;
-  background-color: $light;
-  align-items: center;
-  margin-top: 30px;
-  margin-left: 10px;
-  margin-right: 10px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  box-shadow: 1px 1px 7px lightgray;
-  line-height: 8px;
-  margin-bottom: 20px;
-}
 
 .details-card p {
   font-size: 16px;
@@ -20,6 +6,27 @@
 .backlink {
   text-align: left;
   color: white;
+}
+
+.btn-set-matches {
+  color: white;
+  padding: 8px 15px;
+  border-radius: 20px;
+  background: #E60F05;
+  transition: background 0.3s ease;
+  text-align: center;
+  width: 140px;
+  display: block;
+  margin: auto;
+  margin-top: 15px;
+  background: linear-gradient(0deg, #FD1015 0%, #fb4b02 100%);
+  border: 1px solid white;
+  box-shadow: 1px 1px 7px lightgray;
+}
+
+.table{
+  max-width: 80vw;
+  margin-left: 30px;
 }
 
 table {

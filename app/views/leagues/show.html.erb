@@ -1,3 +1,4 @@
+
 <div class="container">
   <a href="/leagues"><i class="fa-solid fa-chevron-left"></i></a>
   <div class="details-card">
@@ -11,18 +12,33 @@
 
     <p>Click here to share and invite your friends </p>
     <p>
-      <%= invitation_url %>
+    <div class="input-group" data-controller="clipboard" data-clipboard-feedback-text-value="Copied!" style="justify-content: center;">
+      <input type="hidden" class="form-control" data-clipboard-target="input" type="text" value="<%= invitation_url %>" readonly>
+      <div class="input-group-append">
+        <button id="copy-button" class="btn btn-outline-primary" data-action="click->clipboard#copy">Copy to Clipboard</button>
+      </div>
+    </div>
     </p>
   </div>
 
   <div class="text-color-link">
-    <%# implement a helper to display either button depending on whether matches are set already + style it %>
     <%= link_to "See matches", league_matches_path(@league) %>
-    <% if @league.creator == current_user && @league.matches.empty? %>
-      <%= link_to "Set Matches!", setmatches_league_path(@league), data: { turbo_method: :post } %>
-    <% end %>
   </div>
+
+  <% unless @league.matches.present? || @league.users.size <3 %>
+    <div class="btn-set-matches">
+      <%= link_to "Start League!", league_matches_path(@league), data: { turbo_method: :post } %>
+    </div>
+  <% end %>
 </div>
+      <div class="text-color-link">
+        <%# implement a helper to display either button depending on whether matches are set already + style it %>
+        <%= link_to "See matches", league_matches_path(@league) %>
+        <%= link_to "Set Matches!", league_matches_path(@league), data: { turbo_method: :post } %>
+      </div>
+    </div>
+
+
 
 <table>
   <tr>
