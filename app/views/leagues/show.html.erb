@@ -1,26 +1,36 @@
-<div class="container">
-  <a href="/leagues"><i class="fa-solid fa-chevron-left"></i></a>
-  <div class="details-card">
-    <h3>
-      <%= @league.name %>
-    </h3>
+    <div class="container">
+      <a href="/leagues"><i class="fa-solid fa-chevron-left"></i></a>
 
-    <h3>
-      <%= @league.sport %>
-    </h3>
+  <div class="container" style="margin-left: 10px; margin-top: 20px">
+  <div class="module-wrapper text-center">
+    <div class="module">
 
-    <p>Click here to share and invite your friends </p>
-    <p>
-      <%= invitation_url %>
-    </p>
-  </div>
+      <div class="details-card">
+        <h3>
+          <%= @league.name %>
+        </h3>
 
-  <div class="text-color-link">
-    <%# implement a helper to display either button depending on whether matches are set already + style it %>
-    <%= link_to "See matches", league_matches_path(@league) %>
-    <%= link_to "Set Matches!", league_matches_path(@league), data: { turbo_method: :post } %>
+        <h3>
+          <%= @league.sport %>
+        </h3>
+
+        <p>Click here to share and invite your friends </p>
+        <p>
+          <%= invitation_url %>
+        </p>
+      </div>
+
+    </div>
   </div>
 </div>
+      <div class="text-color-link">
+        <%# implement a helper to display either button depending on whether matches are set already + style it %>
+        <%= link_to "See matches", league_matches_path(@league) %>
+        <%= link_to "Set Matches!", league_matches_path(@league), data: { turbo_method: :post } %>
+      </div>
+    </div>
+
+
 
 <table>
   <tr>
