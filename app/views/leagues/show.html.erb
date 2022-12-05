@@ -1,25 +1,55 @@
+<a href="/leagues"><i class="fa-solid fa-chevron-left m-4"></i></a>
 
-<div class="container">
-  <a href="/leagues"><i class="fa-solid fa-chevron-left"></i></a>
-  <div class="details-card">
-    <h3>
-      <%= @league.name %>
-    </h3>
+<div class="container" style="margin-left: 27px; margin-top: 100px">
+  <div class="module-wrapper text-center">
+    <div class="module">
 
-    <h3>
-      <%= @league.sport %>
-    </h3>
+      <div class="container">
+        <div class="details-card">
+          <h3>
+            <%= @league.name %>
+          </h3>
 
-    <p>Click here to share and invite your friends </p>
-    <p>
-    <div class="input-group" data-controller="clipboard" data-clipboard-feedback-text-value="Copied!" style="justify-content: center;">
-      <input type="hidden" class="form-control" data-clipboard-target="input" type="text" value="<%= invitation_url %>" readonly>
-      <div class="input-group-append">
-        <button id="copy-button" class="btn btn-outline-primary" data-action="click->clipboard#copy">Copy to Clipboard</button>
+          <h3>
+            <%= @league.sport %>
+            <% if @league.sport == "Ping-Pong" %>
+              <%= image_tag "pingpong-image.png" %>
+            <% elsif @league.sport == "BeerPong" %>
+              <%= image_tag "beerpong.png" %>
+            <% elsif @league.sport == "Darts" %>
+              <%= image_tag "darts.png" %>
+            <% elsif @league.sport == "Snooker" %>
+             <%= image_tag "snooker.png" %>
+            <% elsif @league.sport == "Tenis" %>
+              <%= image_tag "tenis.png" %>
+            <% elsif @league.sport == "Weightlift" %>
+              <%= image_tag "weightlift.png" %>
+            <% elsif @league.sport == "Fight" %>
+              <%= image_tag "fight.png" %>
+            <% elsif @league.sport == "Foosball" %>
+              <%= image_tag "foosball.png" %>
+            <% elsif @league.sport == "Bowling" %>
+              <%= image_tag "bowling.png" %>
+            <% else @league.sport == "Karaoke" %>
+              <%= image_tag "karaoke.png" %>
+            <% end %>
+          </h3>
+
+          <p>Click here to copy and invite your friends.</p>
+          <p>
+          <div class="input-group" data-controller="clipboard" data-clipboard-feedback-text-value="Copied!" style="justify-content: center;">
+            <input type="hidden" class="form-control" data-clipboard-target="input" type="text" value="<%= invitation_url %>" readonly>
+            <div class="input-group-append">
+              <button id="copy-button" class="btn btn-outline-primary" data-action="click->clipboard#copy">Copy to Clipboard</button>
+            </div>
+          </div>
+          </p>
+        </div>
+      </div>
+
+        </div>
       </div>
     </div>
-    </p>
-  </div>
 
   <div class="text-color-link">
     <%= link_to "See matches", league_matches_path(@league) %>
