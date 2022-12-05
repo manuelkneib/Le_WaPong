@@ -5,30 +5,39 @@
       <%= @league.name %>
     </h3>
 
-    <h3>
-      <%= @league.sport %>
+    <h3 style="font-size:18px;"> Competing in:
+      <strong><%= @league.sport %></strong>
     </h3>
 
-    <p>Click here to share and invite your friends </p>
-    <p>
-    <div class="input-group" data-controller="clipboard" data-clipboard-feedback-text-value="Copied!" style="justify-content: center;">
-      <input type="hidden" class="form-control" data-clipboard-target="input" type="text" value="<%= invitation_url %>" readonly>
-      <div class="input-group-append">
-        <button id="copy-button" class="btn btn-outline-primary" data-action="click->clipboard#copy">Copy to Clipboard</button>
+    <% unless @league.matches.present? %>
+    <div class="conditional-invites mt-3">
+      <p>
+      <div class="input-group" data-controller="clipboard" data-clipboard-feedback-text-value="Copied!" style="justify-content: center;">
+        <input type="hidden" class="form-control" data-clipboard-target="input" type="text" value="<%= invitation_url %>" readonly>
+        <div class="input-group-append">
+          <button id="copy-button" class="btn btn-outline-primary" style="width:200px" data-action="click->clipboard#copy">Copy the invite link and send it to your friends</button>
+        </div>
       </div>
+      </p>
     </div>
-    </p>
+    <% end %>
   </div>
 
   <div class="text-color-link">
     <%= link_to "See matches", league_matches_path(@league) %>
   </div>
 
-  <% unless @league.matches.present? || @league.users.size <3 %>
-    <div class="btn-set-matches">
-      <%= link_to "Start League!", league_matches_path(@league), data: { turbo_method: :post } %>
-    </div>
-  <% end %>
+  <div class="conditional-league-items">
+    <% if @league.users.size <3 %>
+      <p style="color:white; background-color:#E60F05; text-align:center; font-size:10px; width:300px; margin:auto;"><i class="fa-solid fa-triangle-exclamation"></i> Your league needs three or more players before you can start it <i class="fa-solid fa-triangle-exclamation"></i></p>
+    <% end %>
+
+    <% if @league.creator == current_user && @league.matches.empty? && @league.users.size >2%>
+      <div class="btn-set-matches">
+        <%= link_to "Start League!", league_matches_path(@league), data: { turbo_method: :post } %>
+      </div>
+    <% end %>
+  </div>
 </div>
 
 <table>
