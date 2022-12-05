@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   resources :leagues do
     resources :user_leagues, only: :create
     resources :matches, only: %i[new create index]
+    member do
+      post "setmatches", to: "leagues#setmatches"
+    end
   end
 
   get "leagues/:id/invitation", to: "leagues#invitation", as: :invitation
@@ -19,6 +22,9 @@ Rails.application.routes.draw do
   resources :matches, only: [] do
     member do
       post "setwinner", to: "matches#setwinner"
+    end
+    collection do
+      post "reload_round", to: "matches#reload_round"
     end
   end
 end

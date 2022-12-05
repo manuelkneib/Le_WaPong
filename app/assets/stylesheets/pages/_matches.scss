@@ -2,7 +2,7 @@
   background-color: #D3D3D3;
   padding: 5px;
   margin: 70px 10px 0px 10px;
-  border-radius: 10px 10px 0px 0px ;
+  border-radius: 10px 10px 0px 0px;
 }
 
 .match {
@@ -15,6 +15,15 @@
   border-radius: 5px;
   padding: 15px;
   margin-bottom: 20px;
+  position: relative;
+}
+.reload {
+  position: absolute;
+
+  top: 10px;
+  right: 10px;
+  left: auto;
+  z-index: 100;
 }
 
 .player1 {
@@ -23,4 +32,8 @@
 
 .player2 {
   display: flex;
+}
+
+.fa-rotate-right {
+  color: #6C6C6C;
 }
