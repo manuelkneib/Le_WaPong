@@ -1,16 +1,16 @@
 .module-wrapper {
   max-width: 80vw;
   padding: 1rem;
-  position: relative;
   background: linear-gradient(to right, red, orange);
-  padding: 3px;
+  padding: 6px;
   box-shadow: 3px 3px 7px lightgray;
   border-radius: 10px;
+  border: 2px solid $white;
 }
 
 .module {
   background: $blue;
-  color: white;
+  color: $white;
   padding: 1rem;
   border-radius: 10px;
 }
