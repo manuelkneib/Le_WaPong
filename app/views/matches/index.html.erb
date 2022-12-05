@@ -1,5 +1,10 @@
 <%# not sure about how to put it as url, need 'a' instead of 'link to' in order to display font-awesome arrow... %>
-<a href= "/leagues/<%=@league.id%>" ><i class="fa-solid fa-chevron-left"></i></a>
+<a href= "/leagues" ><i class="fa-solid fa-chevron-left"></i></a>
+
+  <div class="match-slider">
+    <a href="/leagues/<%=@league.id%>" class="m-slider-leaderboard"><i class="fa-solid fa-table-list"></i></a>
+    <a href="/leagues/<%=@league.id%>/matches" class="m-slider-matches"><i class="fa-solid fa-user-group"></i></a>
+  </div>
 
 <div class="overall-matches">
   <% @max_round.times do |round| %>

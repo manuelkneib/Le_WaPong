@@ -5,9 +5,11 @@
     <h3>
       <%= @league.name %>
     </h3>
-
-    <h3 style="font-size:18px;"> Competing in:
+    <h3 style="font-size:18px;"> competing in:
       <strong><%= @league.sport %></strong>
+    </h3>
+    <h3 style="font-size:18px;"> organized by:
+      <strong><%= @league.creator.first_name %> <%= @league.creator.last_name %></strong>
     </h3>
 
     <% unless @league.matches.present? %>
@@ -16,7 +18,7 @@
       <div class="input-group" data-controller="clipboard" data-clipboard-feedback-text-value="Copied!" style="justify-content: center;">
         <input type="hidden" class="form-control" data-clipboard-target="input" type="text" value="<%= invitation_url %>" readonly>
         <div class="input-group-append">
-          <button id="copy-button" class="btn btn-outline-primary" style="width:200px" data-action="click->clipboard#copy">Copy the invite link and send it to your friends</button>
+          <button id="copy-button" class="btn btn-outline-primary" style="width:220px" data-action="click->clipboard#copy">Click to copy the invite link and send it to your friends</button>
         </div>
       </div>
       </p>
@@ -24,13 +26,14 @@
     <% end %>
   </div>
 
-  <div class="text-color-link">
-    <%= link_to "See matches", league_matches_path(@league) %>
+  <div class="league-slider">
+    <a href="/leagues/<%=@league.id%>" class="l-slider-leaderboard"><i class="fa-solid fa-table-list"></i></a>
+    <a href="/leagues/<%=@league.id%>/matches" class="l-slider-matches"><i class="fa-solid fa-user-group"></i></a>
   </div>
 
   <div class="conditional-league-items">
     <% if @league.users.size <3 %>
-      <p style="color:white; background-color:#E60F05; text-align:center; font-size:10px; width:300px; margin:auto;"><i class="fa-solid fa-triangle-exclamation"></i> Your league needs three or more players before you can start it <i class="fa-solid fa-triangle-exclamation"></i></p>
+      <p style="color:white; background-color:#E60F05; text-align:center; font-size:10px; width:290px; margin:auto;"><i class="fa-solid fa-triangle-exclamation"></i> Your league needs three or more players before you can start<i class="fa-solid fa-triangle-exclamation"></i></p>
     <% end %>
 
     <% if @league.creator == current_user && @league.matches.empty? && @league.users.size >2%>
