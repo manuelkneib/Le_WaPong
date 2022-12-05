@@ -79,7 +79,3 @@ end
 
 # individual additions
 gem "faker"
-
-gem 'clipboard-rails'
-
-gem 'jquery-turbolinks'
