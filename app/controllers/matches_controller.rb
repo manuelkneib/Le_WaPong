@@ -27,6 +27,16 @@ class MatchesController < ApplicationController
     redirect_to league_matches_path(match.league)
   end
 
+  def reload_round
+    @matches = Match.where(id: params[:matches])
+    @matches.each do |match|
+      match.winner = nil
+      match.save
+    end
+    match = @matches.first
+    redirect_to league_matches_path(match.league)
+  end
+
   private
 
   def match_params
