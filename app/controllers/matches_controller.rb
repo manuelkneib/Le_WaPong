@@ -2,6 +2,7 @@ class MatchesController < ApplicationController
   def index
     @league = League.find(params[:league_id])
     @players = @league.users
+    set_league_matches if Match.where(league: @league).empty?
     @matches = Match.where(league: @league).order("matches.id ASC")
     @max_round = @matches.maximum(:round)
   end
@@ -14,7 +15,6 @@ class MatchesController < ApplicationController
     @league = League.find(params[:league_id])
     @players = @league.users
 
-    set_league_matches
 
     redirect_to league_matches_path(@league)
   end
@@ -34,8 +34,6 @@ class MatchesController < ApplicationController
   end
 
   def set_league_matches
-    Match.where(league: @league).destroy_all
-
     num_rounds = @players.size - 1
     num_matches = (1..@players.size).inject(:*) / (2 * (1..(@players.size - 2)).inject(:*))
 
