@@ -1,4 +1,6 @@
-<h1>Hello from league/matches</h1>
+<%# not sure about how to put it as url, need 'a' instead of 'link to' in order to display font-awesome arrow... %>
+<a href= "/leagues/<%=@league.id%>" ><i class="fa-solid fa-chevron-left"></i></a>
+
 <div class="overall-matches">
   <% @max_round.times do |round| %>
     <% round += 1 %>
@@ -15,9 +17,7 @@
               <%= "#{match.player1.first_name} #{match.player1.last_name}" %>
             </div>
           </div>
-
           <div class="vs">vs</div>
-
           <div>
             <% if match.winner != match.player2 && match.winner.nil? %>
               <%= link_to "winner", setwinner_match_path(match, winner_id: match.player2), data: { turbo_method: :post } %>
@@ -29,6 +29,5 @@
         </div>
       <% end %>
     </div>
-
   <% end %>
 </div>

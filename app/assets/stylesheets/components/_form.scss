@@ -4,6 +4,9 @@
   margin-right: 25px;
 }
 
+.welcome-text {
+  font-weight: lighter;
+}
 
 .form-login {
   box-shadow: 0 3px 10px rgb(255, 255, 255);
@@ -76,4 +79,8 @@
   background: #FD1015;
   background: linear-gradient(0deg, #FD1015 0%, rgba(251,75,2,1) 100%);
   width: 100px;
+}
+
+.forgot-pw {
+  text-align: center;
 }

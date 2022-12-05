@@ -1,62 +1,43 @@
+<div class="container">
+  <a href="/leagues"><i class="fa-solid fa-chevron-left"></i></a>
+  <div class="details-card">
+    <h3>
+      <%= @league.name %>
+    </h3>
 
-<div class="container mt-3">
-      <%= link_to 'Back', leagues_path, class: "backlink" %>
+    <h3>
+      <%= @league.sport %>
+    </h3>
 
-  <h1 class="text-center text-white mt-5 mb-4 ms-3 me-3"> See details of your league and invite your friends!
-  </h1>
+    <p>Click here to share and invite your friends </p>
+    <p>
+      <%= invitation_url %>
+    </p>
+  </div>
 
-      <div class="details-card">
-
-        <h3> Your league:
-          <%= @league.name %>
-        </h3>
-
-        <h3> Sport:
-          <%= @league.sport %>
-        </h3>
-        <p>~</p>
-        <p>Share this link: </p>
-        <p>
-          <%= invitation_url %>
-        </p>
-        <p>
-          <% @league.users.each do |user| %>~
-        </p>
-        <p>Owner:</p>
-        <p>
-          <%= user.email %>
-        </p>
-        <% end %>
-
-       </div>
-
-      <div class="text-color-link">
-        <%= link_to "See matches", league_matches_path(@league) %>
-        <%= link_to "Set Matches!", league_matches_path(@league), data: { turbo_method: :post } %>
-      </div>
-
-
+  <div class="text-color-link">
+    <%# implement a helper to display either button depending on whether matches are set already + style it %>
+    <%= link_to "See matches", league_matches_path(@league) %>
+    <%= link_to "Set Matches!", league_matches_path(@league), data: { turbo_method: :post } %>
+  </div>
 </div>
 
-<div class="table">
-
-  <table>
-    <tr>
-      <th>#</th>
-      <th>Players</th>
-      <th>Wins</th>
-      <th>Points</th>
-    </tr>
-      <% i = 1 %>
+<table>
+  <tr>
+    <th>#</th>
+    <th>Players</th>
+    <th>Wins</th>
+    <th>Points</th>
+  </tr>
+  <% i = 1 %>
   <% @leaderboard_players.order("points DESC").each do |player| %>
-      <tr>
-        <td><%= i %></td>
-        <td><%= player.first_name %> <%= player.last_name %></td>
+    <tr>
+      <td><%= i %></td>
+      <td><%= player.first_name %> <%= player.last_name %></td>
         <% u_l = @league.user_leagues.where("user_id = #{player.id}").first %>
-        <td><%= u_l.points / 3 %></td>
-        <td><%= u_l.points %></td>
-      </tr>
-      <% i += 1 %>
+      <td><%= u_l.points / 3 %></td>
+      <td><%= u_l.points %></td>
+    </tr>
+    <% i += 1 %>
   <% end %>
-    </table>
-</div>
+</table>

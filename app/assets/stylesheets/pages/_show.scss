@@ -1,11 +1,10 @@
-
 .details-card {
   color: $blue;
   background: $light;
   text-align: center;
   border-radius: 20px;
   align-items: center;
-  margin-top: 40px;
+  margin-top: 30px;
   margin-left: 10px;
   margin-right: 10px;
   padding-top: 20px;
@@ -16,8 +15,7 @@
 }
 
 .details-card p {
-
-font-size: 16px;
+  font-size: 16px;
 }
 
 .backlink {
@@ -47,10 +45,9 @@ tr:nth-child(even) {
   background-color: #dddddd;
 }
 
-
-text-color-link {
+.text-color-link {
+  text-align: center;
   a {
     color: white;
-
   }
 }

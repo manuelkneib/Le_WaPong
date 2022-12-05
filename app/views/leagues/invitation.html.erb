@@ -1,4 +1,8 @@
 <%# <%= link_to "Accept", accept_invitation_path(league, user_id: current_user.id), method: "POST" %>
-
-<h1>Hello! <%= @league.creator.email %> has invitated you to participate in <%= @league.name %></h1>
-<%= link_to "Accept", league_user_leagues_path(@league), data: {turbo_method: :post} %>
+<div class="container">
+  <div class="invtions pagegit ">
+    <h3 class= "mt-3", style="color:white">Hello!</h3>
+    <p style="color:white"><%= @league.creator.first_name %> <%= @league.creator.last_name %> has invitated you to compete in his '<%= @league.name %>' where you will be playing <%= @league.sport %> </p>
+    <%= link_to "Accept", league_user_leagues_path(@league), data: {turbo_method: :post} %>
+  </div>
+</div>
