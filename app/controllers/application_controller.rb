@@ -13,4 +13,16 @@ class ApplicationController < ActionController::Base
   def default_url_options
     { host: ENV["www.lewapong.fun"] || "localhost:3000" }
   end
+
+  protected
+
+  def after_sign_in_path_for(resource_or_scope)
+    if session[:attendee]
+      previous_url = session[:previous_url]
+      session[:previous_url] = nil #clear session
+      previous_url #going back to event page
+    else
+      super
+    end
+  end
 end

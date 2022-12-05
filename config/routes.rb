@@ -23,5 +23,8 @@ Rails.application.routes.draw do
     member do
       post "setwinner", to: "matches#setwinner"
     end
+    collection do
+      post "reload_round", to: "matches#reload_round"
+    end
   end
 end

@@ -1,4 +1,5 @@
 class LeaguesController < ApplicationController
+  skip_before_action :authenticate_user!, only: :invitation
   before_action :set_league, only: %i[show invitation join-league destroy set_points]
   def index
     @leagues = League.joins(:user_leagues).where("user_leagues.user_id = #{current_user.id}")
@@ -24,6 +25,7 @@ class LeaguesController < ApplicationController
     @league = League.find(params[:id])
     set_points
     @leaderboard_players = User.joins(:user_leagues).where("user_leagues.league_id = #{@league.id}")
+
   end
 
   def destroy
@@ -33,6 +35,7 @@ class LeaguesController < ApplicationController
   end
 
   def invitation
+    session[:previous_url] = request.fullpath
     @league = League.find(params[:id])
   end
 
