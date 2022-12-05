@@ -6,6 +6,11 @@
     <% round += 1 %>
     <div class="form-action"></div>
     <div class=round data-controller="pick-winner">
+      <div class="reload">
+        <div class="reload-icon">
+          <i class="fa-solid fa-rotate-right"></i>
+        </div>
+      </div>
       <p>ROUND: #<%= round %></p>
       <% @matches.where(round: round).each do |match| %>
         <div class="match align-items-center">
