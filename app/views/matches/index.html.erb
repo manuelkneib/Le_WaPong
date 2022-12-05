@@ -8,6 +8,7 @@
     <div class=round data-controller="pick-winner">
       <p>ROUND: #<%= round %></p>
       <% @matches.where(round: round).each do |match| %>
+      <% if @league.creator == current_user %>
         <div class="reload">
           <div class="reload-icon">
             <%# <i><%= link_to fa_icon "fa-solid fa-rotate-right", leagues_path %>
@@ -16,6 +17,7 @@
             <% end %>
           </div>
         </div>
+        <% end %>
         <div class="match align-items-center">
           <div>
             <% if match.winner != match.player1 && match.winner.nil? %>
