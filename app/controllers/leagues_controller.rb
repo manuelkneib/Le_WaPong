@@ -25,6 +25,7 @@ class LeaguesController < ApplicationController
     @league = League.find(params[:id])
     set_points
     @leaderboard_players = User.joins(:user_leagues).where("user_leagues.league_id = #{@league.id}")
+
   end
 
   def destroy
