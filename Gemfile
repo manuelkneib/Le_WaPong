@@ -79,3 +79,6 @@ end
 
 # individual additions
 gem "faker"
+
+#for clipboardjs
+gem 'clipboard-rails'
