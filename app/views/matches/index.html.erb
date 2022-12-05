@@ -8,33 +8,22 @@
     <div class=round data-controller="pick-winner">
       <p>ROUND: #<%= round %></p>
       <% @matches.where(round: round).each do |match| %>
-      <% if @league.creator == current_user %>
-        <div class="reload">
-          <div class="reload-icon">
-            <%# <i><%= link_to fa_icon "fa-solid fa-rotate-right", leagues_path %>
-            <%= link_to reload_round_matches_path(matches: @matches.where(round: round).ids), data: { turbo_method: :post } do %>
-              <i class="fa-solid fa-rotate-right"></i>
-            <% end %>
-          </div>
-        </div>
-        <% end %>
+
         <div class="match align-items-center">
           <div>
-            <% if match.winner != match.player1 && match.winner.nil? %>
-              <%= link_to "winner", setwinner_match_path(match, winner_id: match.player1), data: { turbo_method: :post } %>
+            <%= link_to setwinner_match_path(match, winner_id: match.player1), data: { turbo_method: :post }, style:"text-decoration:none" do %>
+              <div class="player1 <%= "btn winner" if match.player1 == match.winner %>" data-pick-winner-target="player" data-action="click->pick-winner#send">
+                <%= "#{match.player1.first_name} #{match.player1.last_name}" %>
+              </div>
             <% end %>
-            <div class="player1 <%= "btn winner" if match.player1 == match.winner %>" data-pick-winner-target="player" data-action="click->pick-winner#send">
-              <%= "#{match.player1.first_name} #{match.player1.last_name}" %>
-            </div>
           </div>
           <div class="vs">vs</div>
           <div>
-            <% if match.winner != match.player2 && match.winner.nil? %>
-              <%= link_to "winner", setwinner_match_path(match, winner_id: match.player2), data: { turbo_method: :post } %>
+            <%= link_to setwinner_match_path(match, winner_id: match.player2), data: { turbo_method: :post }, style:"text-decoration:none" do %>
+              <div class="player2 <%= "btn winner" if match.player2 == match.winner %>" data-pick-winner-target="player" data-action="click->pick-winner#send">
+                <%= "#{match.player2.first_name} #{match.player2.last_name}" %>
+              </div>
             <% end %>
-            <div class="player2 <%= "btn winner" if match.player2 == match.winner %>" data-pick-winner-target="player" data-action="click->pick-winner#send">
-              <%= "#{match.player2.first_name} #{match.player2.last_name}" %>
-            </div>
           </div>
         </div>
       <% end %>

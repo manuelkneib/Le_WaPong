@@ -1,0 +1,10 @@
+<% if @league.creator == current_user %>
+  <div class="reload">
+    <div class="reload-icon">
+      <%# <i><%= link_to fa_icon "fa-solid fa-rotate-right", leagues_path %>
+      <%= link_to reload_round_matches_path(matches: @matches.where(round: round).ids), data: { turbo_method: :post }, style:"text-decoration:none" do %>
+        <i class="fa-solid fa-rotate-right"></i>
+      <% end %>
+    </div>
+  </div>
+<% end %>
