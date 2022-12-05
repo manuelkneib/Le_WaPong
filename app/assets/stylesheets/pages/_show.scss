@@ -23,6 +23,22 @@
   color: white;
 }
 
+.btn-set-matches {
+  color: white;
+  padding: 8px 15px;
+  border-radius: 20px;
+  background: #E60F05;
+  transition: background 0.3s ease;
+  text-align: center;
+  width: 140px;
+  display: block;
+  margin: auto;
+  margin-top: 15px;
+  background: linear-gradient(0deg, #FD1015 0%, #fb4b02 100%);
+  border: 1px solid white;
+  box-shadow: 1px 1px 7px lightgray;
+}
+
 .table{
   max-width: 80vw;
   margin-left: 30px;

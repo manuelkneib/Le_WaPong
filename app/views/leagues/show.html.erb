@@ -20,12 +20,15 @@
     </p>
   </div>
 
-
   <div class="text-color-link">
-    <%# implement a helper to display either button depending on whether matches are set already + style it %>
     <%= link_to "See matches", league_matches_path(@league) %>
-    <%= link_to "Set Matches!", league_matches_path(@league), data: { turbo_method: :post } %>
   </div>
+
+  <% unless @league.matches.present? || @league.users.size <3 %>
+    <div class="btn-set-matches">
+      <%= link_to "Start League!", league_matches_path(@league), data: { turbo_method: :post } %>
+    </div>
+  <% end %>
 </div>
 
 <table>
