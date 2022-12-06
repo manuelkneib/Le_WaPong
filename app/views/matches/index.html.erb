@@ -6,9 +6,10 @@
     <% round += 1 %>
     <div class="form-action"></div>
     <div class=round data-controller="pick-winner">
-      <p>ROUND: #<%= round %></p>
+      <div class="round-num">
+        <p class="lead"><strong>ROUND <%= round %></strong></p>
+      </div>
       <% @matches.where(round: round).each do |match| %>
-
         <div class="match align-items-center">
           <div>
             <%= link_to setwinner_match_path(match, winner_id: match.player1), data: { turbo_method: :post }, style:"text-decoration:none" do %>

@@ -11,6 +11,8 @@
 }
 
 .round {
+  display: flex;
+  flex-direction: column;
   background-color: white;
   border-radius: 5px;
   padding: 15px;
@@ -44,7 +46,9 @@
   text-decoration: none;
 }
 
-
+.round-num {
+  align-self: center;
+}
 
 
 .fa-rotate-right {
