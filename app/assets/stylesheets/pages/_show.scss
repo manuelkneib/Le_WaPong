@@ -3,25 +3,6 @@
   color: white;
 }
 
-.details-card {
-  color: $blue;
-  background: $light;
-  text-align: center;
-  border-radius: 20px;
-  align-items: center;
-  margin-top: 20px;
-  margin-left: 10px;
-  margin-right: 10px;
-  padding-top: 10px;
-  border: 3px solid orange;
-  box-shadow: 1px 1px 7px lightgray;
-  line-height: 8px;
-  margin-bottom: 20px;
-  .p {
-    font-size: 16px;
-  }
-}
-
 .league-slider {
   text-align: center;
   text-decoration: none;
@@ -43,6 +24,12 @@
     border-bottom-right-radius: 10px;
     margin-left: -3px;
   }
+}
+
+.conditional-invites {
+  border: 1px solid $white;
+  border-radius: 20px;
+  color: $white;
 }
 
 .btn-set-matches {
@@ -83,9 +70,3 @@ tr:nth-child(even) {
   background-color: #dddddd;
 }
 
-.text-color-link {
-  text-align: center;
-  a {
-    color: white;
-  }
-}
