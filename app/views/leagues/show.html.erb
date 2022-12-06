@@ -24,31 +24,32 @@
     <% end %>
   </div>
 </div>
-
-  <table class="table table-striped table-hover" style="background-color:#ffffff; border-radius:10px; overflow: hidden">
-    <thead class="thead-light">
-      <tr>
-        <th scope="col">#</th>
-        <th style=' text-align:center' scope="col">Players</th>
-        <th scope="col">Played</th>
-        <th scope="col">Won</th>
-        <th scope="col">Points</th>
-
-      </tr>
-    </thead>
-    <tbody>
-      <% i = 1 %>
-      <% @leaderboard_players.order("points DESC").each do |player| %>
+  <div class="table-container">
+    <table class="table table-striped table-hover" style="background-color:#ffffff; border-radius:10px; overflow: hidden">
+      <thead class="thead-light">
         <tr>
-        <th style=' text-align:center' scope="row"><%= i %></th>
-        <td style=' text-align:center'><%= player.first_name %> <%= player.last_name %></td>
-        <% u_l = @league.user_leagues.where("user_id = #{player.id}").first %>
-        <% u_m = @league.matches.where("(player1_id = #{player.id} OR player2_id = #{player.id}) AND winner_id IS NOT NULL") %>
-        <td style=' text-align:center'><%= u_m.count %></td>
-        <td style=' text-align:center'><%= u_l.points / 3 %></td>
-        <td style=' text-align:center'><%= u_l.points %></td>
+          <th scope="col">#</th>
+          <th style=' text-align:center' scope="col">Players</th>
+          <th scope="col">Played</th>
+          <th scope="col">Won</th>
+          <th scope="col">Points</th>
+
         </tr>
-      <% i += 1 %>
-    <% end %>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+        <% i = 1 %>
+        <% @leaderboard_players.order("points DESC").each do |player| %>
+          <tr>
+          <th style=' text-align:center' scope="row"><%= i %></th>
+          <td style=' text-align:center'><%= player.first_name %> <%= player.last_name %></td>
+          <% u_l = @league.user_leagues.where("user_id = #{player.id}").first %>
+          <% u_m = @league.matches.where("(player1_id = #{player.id} OR player2_id = #{player.id}) AND winner_id IS NOT NULL") %>
+          <td style=' text-align:center'><%= u_m.count %></td>
+          <td style=' text-align:center'><%= u_l.points / 3 %></td>
+          <td style=' text-align:center'><%= u_l.points %></td>
+          </tr>
+        <% i += 1 %>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
