@@ -15,7 +15,7 @@ module IconHelper
     elsif league.sport == "Foosball"
       image_tag "foosball.png"
     elsif league.sport == "Karaoke"
-      image_tag "karaoke.png"
+      image_tag "karaoke_whitebg.png"
     elsif league.sport == "Marbles"
       image_tag "karaoke.png"
     elsif league.sport == "Ping Pong"

@@ -20,15 +20,18 @@
       <% @leagues.each do |league| %>
         <div class="position-relative">
           <%= link_to league_path(league), class: "text-decoration-none" do %>
-            <div class="leagues" style="background: white;">
+            <div class="leagues">
               <div style="display: grid;justify-items: start;">
-                <p class="p-name-league"><%= league.name %></p>
-                <p class="p-creator-league">
+                <div class="mx-auto">
+                  <p class="p-name-league"><%= league.name %></p>
+                </div>
+                <p class="creator-league">
                   Created by <strong><%= league.creator == current_user ? "you" : league.creator.first_name %></strong> on <%= league.creator.created_at %>
                 </p>
                 <div class="icon-tag d-flex">
-                  <p class="p-sport-league"><%= league.sport %></p>
-                  <%= icon_tag(league) %>
+                  <p class="sport-league">
+                  <%= league.sport %></p>
+                 <%= icon_tag(league) %>
                 </div>
 
               </div>
@@ -37,7 +40,7 @@
           <div class="league-index-details position-absolute" style="top: 11px; right: 33px;">
             <% if league.creator == current_user %>
 
-              <div class="d-flex flex-column mt-5">
+              <div class="d-flex flex-column mt-2">
                 <%= link_to "X", league_path(league), class: "btn-cancel", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to cancel your league?" } %>
               </div>
 
