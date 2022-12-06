@@ -1,24 +1,8 @@
 <div class="container">
     <h1 class="text-center text-white mt-5"> Choose a name and a sport for your league.</h1>
     <h3 class="text-center text-white"> Share the link with your friends and have fun!</h3>
-    <div class="form-league" id="form-size">
-    <div class="form-inputs form_info">
 
-
-      <div class="form-actions">
-            <%= simple_form_for @league do |f| %>
-              <%= f.input :name %>
-              <%= f.input :sport, :collection => ['Ping-Pong', 'Tennis', 'Darts', 'Billiard','Football','Beer-Pong','Foosball', "Weightlifting", 'Karts', 'Karaoke'] %>
-
-              <div class="form-actions text-center">
-                <%= f.button :submit, "Create", class: "btn btn-primary mt-5" %>
-              </div>
-            <% end %>
-      </div>
-
-
-        <div class="sport-icons text-center mt-5 d-flex justify-content-between">
-
+        <div class="sport-icons text-center mt-5 ms-5 me-5 d-flex justify-content-between">
           <div class="pingpong">
             <i class="fa-solid fa-table-tennis-paddle-ball fa-2xl"></i>
           </div>
@@ -32,6 +16,19 @@
             <i class="fa-solid fa-microphone-lines fa-2xl"></i>
           </div>
         </div>
-    </div>
-  </div>
+
+    <div class="form-league" id="form-size">
+      <div class="form-inputs form_info">
+
+        <div class="form-actions">
+              <%= simple_form_for @league do |f| %>
+                <%= f.input :name %>
+                <%= f.input :sport, :collection => ['Ping-Pong', 'Tennis', 'Darts', 'Billiard','Beer-Pong','Foosball', "Weightlifting", 'Karaoke', 'Fight', 'Bowling'] %>
+        </div>
+                <div class="form-actions text-center">
+                  <%= f.button :submit, "Create", class: "btn btn-primary mt-5" %>
+                </div>
+              <% end %>
+        </div>
+   </div>
 </div>

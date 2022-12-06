@@ -63,21 +63,20 @@
   color: white;
   padding: 8px 24px;
   border-radius: 20px;
-  background: #E60F05;
   transition: background 0.3s ease;
   margin: auto;
   background: linear-gradient(0deg, #FD1015 0%, #fb4b02 100%);
-  border: 1px solid white;
+  border: 3px solid white;
   box-shadow: 1px 1px 7px lightgray;
 }
 
 .btn-cancel {
-background-color: #E60F05;
-background: linear-gradient(0deg, #FD1015 0%, #fb4b02 100%);
-color: white;
+background: $white;
+color: $redorange;
 border-radius: 5px;
 text-decoration: none;
 padding: 1px 4px 0px ;
+border: 1px solid $redorange;
 }
 
 .btn-flat:hover {
