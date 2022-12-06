@@ -16,32 +16,36 @@ puts "__________________"
 puts ""
 
 puts "Creating seed base, just starting..."
-first_names = ["Ana", "Andre", "Andre", "Andre", "Barbara", "Carlos", "Catarina", "Chiara", "Dal", "Danilo", "Filipa", "Gabriel", "Gabriel", "Gerardo", "Guilherme", "Havard", "Henrique", "Ines", "Joao", "Joaquim", "Joe", "Josh", "Julia", "Loic", "Lorenz", "Manuel", "Margarida", "Miguel", "Miguel", "Pedro", "Ricardo", "Rita", "Roel", "Rory", "Ryan", "Samuel", "Sara", "Sara", "Telo", "Vasco", "Vasco" , "Will", "Zoe"]
-last_names = ["Sousa", "Pires", "Bakiewicz", "Marques", "Peric", "Daniel", "Estevao", "Biasi", "Robinson", "Guimaraes", "Merino", "Fernandes", "Pereira", "Wemans", "Vasconcelos", "Steffensen", "Albuquerque", "Correia", "Sanches", "Luis", "DePumpo", "Merrill", "Wald", "Thieffry", "Ploch", "Kneib", "Toureiro", "Figueiredo", "Silva", "Agostinho", "Mendes", "Laia", "de Jong", "Carter-Motley", "Hillman", "van de Ven", "Schoonover", "Vieira", "de Castro", "Cardoso", "Correia", "May", "van Perlstein"]
-i = 0
+# first_names = ["Ana", "Andre", "Andre", "Andre", "Barbara", "Carlos", "Catarina", "Chiara", "Dal", "Danilo", "Filipa", "Gabriel", "Gabriel", "Gerardo", "Guilherme", "Havard", "Henrique", "Ines", "Joao", "Joaquim", "Joe", "Josh", "Julia", "Loic", "Lorenz", "Manuel", "Margarida", "Miguel", "Miguel", "Pedro", "Ricardo", "Rita", "Roel", "Rory", "Ryan", "Samuel", "Sara", "Sara", "Telo", "Vasco", "Vasco" , "Will", "Zoe"]
+# last_names = ["Sousa", "Pires", "Bakiewicz", "Marques", "Peric", "Daniel", "Estevao", "Biasi", "Robinson", "Guimaraes", "Merino", "Fernandes", "Pereira", "Wemans", "Vasconcelos", "Steffensen", "Albuquerque", "Correia", "Sanches", "Luis", "DePumpo", "Merrill", "Wald", "Thieffry", "Ploch", "Kneib", "Toureiro", "Figueiredo", "Silva", "Agostinho", "Mendes", "Laia", "de Jong", "Carter-Motley", "Hillman", "van de Ven", "Schoonover", "Vieira", "de Castro", "Cardoso", "Correia", "May", "van Perlstein"]
+names = ["An Sousa", "Andre Pires", "Andre Bakiewicz", "Andre Marques", "Barbara Peric", "Carlos Daniel", "Catarina Estevao", "Chiara Biasi", "Dal Robinson", "Danilo Guimaraes", "Filipa Merino", "Gabriel Fernandes", "Gabriel Pereira", "Gerardo Wemans", "Guilherme Vasconcelos", "Havard Steffensen", "Henrique Albuquerque", "Ines Correia", "Joao Sanches", "Joaquim Luis", "Joe DePumpo", "Josh Merrill", "Julia Wald", "Loic Thieffry", "Lorenz Ploch", "Manuel Kneib", "Margarida Toureiro", "Miguel Figueiredo", "Miguel Silva", "Pedro Agostinho", "Ricardo Mendes", "Rita Laia", "Roel de Jong", "Rory Carter-Motley", "Ryan Hillman", "Samuel van de Ven", "Sara Schoonover", "Sara Vieira", "Diogo Telo de Castro", "Vasco Cardoso", "Vasco Correia" , "Will May", "Zoe van Perlstein" ]
+# i = 0
 puts "__________________"
 puts ""
 
 puts "Creating seed users, we're getting there..."
 puts "__________________"
-43.times do
-  user = User.new(
-    first_name: first_names[i],
-    last_name: last_names[i],
-    email: "#{first_names[i].downcase}.#{last_names[i][0]}#{last_names[i][1]}@lewapong.fun",
+
+names.each do |name|
+  firstname = name.split.first
+  lastname = name.split.drop(1).join(" ")
+
+  user = User.create!(
+    first_name: firstname,
+    last_name: lastname,
+    email: "#{firstname.downcase}.#{lastname.first.downcase}#{lastname[1]}@lewapong.fun",
     password: "123456"
   )
-  user.save!
   puts "#{user.first_name} #{user.last_name} - seeded to DB: #{user.save}"
-  i += 1
 end
+
 puts "__________________"
 puts ""
 
 puts "Creating seed leagues, almost there..."
 puts "__________________"
 users = User.all
-sports = ["Ping Pong", "Darts", "Billiard", "Football", "Beer Pong", "Foosball", "Arm wrestling", "Marbles", "Weightlifting", "Coding" ]
+sports = ["Ping Pong", "Tennis", "Darts", "Billiard", "Beer Pong", "Foosball", "Arm Wrestling", "Marbles", "Weightlifting", "Coding", "Karaoke", "Boxing"]
 
 creator = User.first.id
 43.times do
