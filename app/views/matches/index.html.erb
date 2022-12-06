@@ -1,5 +1,6 @@
-<%# not sure about how to put it as url, need 'a' instead of 'link to' in order to display font-awesome arrow... %>
-<a href= "/leagues" ><i class="fa-solid fa-chevron-left"></i></a>
+<div class="container">
+   <%= render "shared/league_info" %>
+</div>
 
   <div class="match-slider">
     <a href="/leagues/<%=@league.id%>" class="m-slider-leaderboard"><i class="fa-solid fa-table-list"></i></a>
