@@ -1,5 +1,5 @@
 .backlink {
-  text-align: left;
+  // text-align: left;
   color: white;
 }
 
@@ -46,34 +46,4 @@
   background: linear-gradient(0deg, #FD1015 0%, #fb4b02 100%);
   border: 1px solid white;
   box-shadow: 1px 1px 7px lightgray;
-}
-
-.table{
-  max-width: 80vw;
-  margin-left: 30px;
-}
-
-table {
-  margin-top: 20px;
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
-
-td, th {
-  border: 1px solid #253244;
-  text-align: center;
-  padding: 6px;
-  font-size: 13px;
-}
-
-tr:nth-child(even) {
-  background-color: #e6e0de;
-  font-size: 13px;
-  color: #253244;
-}
-
-tr:nth-child(odd) {
-  background-color: #B5B5B5;
-  color: #253244;
 }
