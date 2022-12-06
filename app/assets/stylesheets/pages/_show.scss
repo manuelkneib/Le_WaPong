@@ -58,4 +58,12 @@
 
 .table {
   margin-bottom: 0!important;
+  }
+  
+tbody tr:first-child {
+  background: #aff9b4;
+}
+
+tbody tr:last-child {
+  background: #ff9393;
 }
