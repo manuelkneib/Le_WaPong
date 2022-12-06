@@ -52,14 +52,23 @@ table {
 }
 
 td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
+  border: 1px solid #253244;
+  text-align: center;
+  padding: 6px;
+  font-size: 13px;
 }
 
 tr:nth-child(even) {
-  background-color: #dddddd;
+  background-color: #e6e0de;
+  font-size: 13px;
+  color: #253244;
 }
+
+tr:nth-child(odd) {
+  background-color: #B5B5B5;
+  color: #253244;
+}
+
 
 .text-color-link {
   text-align: center;
@@ -67,3 +76,18 @@ tr:nth-child(even) {
     color: white;
   }
 }
+
+.infos-table-league-1{
+  font-weight: bold;
+  color: #253244;
+  font-size: 14px;
+  text-align: center;
+}
+
+.infos-table-league-2{
+  font-weight: bold;
+  color: #253244;
+  text-align: center;
+}
+
+

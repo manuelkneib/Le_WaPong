@@ -43,22 +43,22 @@
 
 <table>
   <tr>
-    <th>#</th>
-    <th>Players</th>
-    <th>Played</th>
-    <th>Won</th>
-    <th>Points</th>
+    <th class ="infos-table-league-1">#</th>
+    <th class ="infos-table-league-1">Players</th>
+    <th class ="infos-table-league-1">Played</th>
+    <th class ="infos-table-league-1">Won</th>
+    <th class ="infos-table-league-1">Points</th>
   </tr>
   <% i = 1 %>
   <% @leaderboard_players.order("points DESC").each do |player| %>
     <tr>
-      <td><%= i %></td>
+      <td class ="infos-table-league-2"><%= i %></td>
       <td><%= player.first_name %> <%= player.last_name %></td>
       <% u_l = @league.user_leagues.where("user_id = #{player.id}").first %>
       <% u_m = @league.matches.where("(player1_id = #{player.id} OR player2_id = #{player.id}) AND winner_id IS NOT NULL") %>
-      <td><%= u_m.count %></td>
-      <td><%= u_l.points / 3 %></td>
-      <td><%= u_l.points %></td>
+      <td class="infos-table-league-3"><%= u_m.count %></td>
+      <td class="infos-table-league-3"><%= u_l.points / 3 %></td>
+      <td class="infos-table-league-3"><%= u_l.points %></td>
     </tr>
     <% i += 1 %>
   <% end %>
