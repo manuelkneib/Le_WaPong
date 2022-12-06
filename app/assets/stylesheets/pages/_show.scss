@@ -3,25 +3,6 @@
   color: white;
 }
 
-.details-card {
-  color: $blue;
-  background: $light;
-  text-align: center;
-  border-radius: 20px;
-  align-items: center;
-  margin-top: 20px;
-  margin-left: 10px;
-  margin-right: 10px;
-  padding-top: 10px;
-  border: 3px solid orange;
-  box-shadow: 1px 1px 7px lightgray;
-  line-height: 8px;
-  margin-bottom: 20px;
-  .p {
-    font-size: 16px;
-  }
-}
-
 .league-slider {
   text-align: center;
   text-decoration: none;
@@ -43,6 +24,12 @@
     border-bottom-right-radius: 10px;
     margin-left: -3px;
   }
+}
+
+.conditional-invites {
+  border: 1px solid $white;
+  border-radius: 20px;
+  color: $white;
 }
 
 .btn-set-matches {
@@ -90,26 +77,3 @@ tr:nth-child(odd) {
   background-color: #B5B5B5;
   color: #253244;
 }
-
-
-.text-color-link {
-  text-align: center;
-  a {
-    color: white;
-  }
-}
-
-.infos-table-league-1{
-  font-weight: bold;
-  color: #253244;
-  font-size: 14px;
-  text-align: center;
-}
-
-.infos-table-league-2{
-  font-weight: bold;
-  color: #253244;
-  text-align: center;
-}
-
-
