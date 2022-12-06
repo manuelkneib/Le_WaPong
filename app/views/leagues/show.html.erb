@@ -12,27 +12,7 @@
       <h3 class="text-center mb-3" style="font-size:18px;"> Competing in:
         <strong><%= @league.sport %></strong>
         <div class="container text-center mt-3">
-          <% if @league.sport == "Ping-Pong" %>
-            <%= image_tag "pingpong-image.png" %>
-          <% elsif @league.sport == "BeerPong" %>
-            <%= image_tag "beerpong.png" %>
-          <% elsif @league.sport == "Darts" %>
-            <%= image_tag "darts.png" %>
-          <% elsif @league.sport == "Snooker" %>
-            <%= image_tag "snooker.png" %>
-          <% elsif @league.sport == "Tennis" %>
-            <%= image_tag "tenis.png" %>
-          <% elsif @league.sport == "Weightlift" %>
-            <%= image_tag "weightlift.png" %>
-          <% elsif @league.sport == "Fight" %>
-            <%= image_tag "fight.png" %>
-          <% elsif @league.sport == "Foosball" %>
-            <%= image_tag "foosball.png" %>
-          <% elsif @league.sport == "Bowling" %>
-            <%= image_tag "bowling.png" %>
-          <% else @league.sport == "Karaoke" %>
-            <%= image_tag "karaoke.png" %>
-          <% end %>
+          <%= icon_tag(@league) %>
         </div>
       </h3>
       <h3 class="text-center" style="font-size:18px;"> Organized by:
