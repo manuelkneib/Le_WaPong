@@ -24,13 +24,8 @@
 .overall-matches {
   background-color: #D3D3D3;
   padding: 5px;
-  margin: 70px 10px 0px 10px;
-  border-radius: 10px 10px 0px 0px;
-}
-
-.match {
-  display: flex;
-  justify-content: space-between;
+  border-radius: 10px;
+  margin: 10px 20px;
 }
 
 .round {
@@ -38,13 +33,10 @@
   flex-direction: column;
   background-color: white;
   border-radius: 5px;
-  padding: 15px;
-  margin-bottom: 20px;
   position: relative;
 }
 .reload {
   position: absolute;
-
   top: 10px;
   right: 10px;
   left: auto;
@@ -52,15 +44,23 @@
 }
 
 .player1 {
-  display: flex;
   color:#6C6C6C;
   text-decoration: none;
+  max-width: 120px;
+  text-align: center;
 }
 
 .player2 {
-  display: flex;
   color:#6C6C6C;
   text-decoration: none;
+  max-width: 120px;
+  text-align: center;
+}
+
+.vs {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
 }
 
 
@@ -71,9 +71,26 @@
 
 .round-num {
   align-self: center;
+  width: 100%;
+}
+
+.match {
+  background-color: white;
+  border-bottom: 1px solid #6c6c6c66;
 }
 
 
 .fa-rotate-right {
   color: #6C6C6C;
+}
+
+#accordion-btn {
+  background-color: #d3d3d357;
+  border-radius: 5px;
+}
+
+
+.match-winner {
+  border: 1px solid!important;
+  box-shadow: 1px 1px!important;
 }

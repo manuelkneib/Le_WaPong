@@ -1,14 +1,20 @@
 <div class="container">
+
   <%= render "shared/league_info" %>
+
 
   <div class="league-slider">
     <a href="/leagues/<%=@league.id%>" class="l-slider-leaderboard"><i class="fa-solid fa-table-list"></i></a>
     <a href="/leagues/<%=@league.id%>/matches" class="l-slider-matches"><i class="fa-solid fa-user-group"></i></a>
   </div>
 
-  <div class="conditional-league-items">
+  <div class="conditional-league-items mb-3">
     <% if @league.users.size <3 %>
-      <p style="color:white; background-color:#E60F05; text-align:center; font-size:10px; width:290px; margin:auto;"><i class="fa-solid fa-triangle-exclamation"></i> Your league needs three or more players before you can start<i class="fa-solid fa-triangle-exclamation"></i></p>
+      <p style="color:white; background-color:#E60F05; text-align:center; font-size:10px; width:290px; margin:auto; border-radius:5px;"><i class="fa-solid fa-triangle-exclamation"></i> Your league needs three or more players before you can start<i class="fa-solid fa-triangle-exclamation"></i></p>
+    <% end %>
+
+    <% if @league.users.size >2 && @league.creator != current_user && @league.matches.empty? %>
+      <p style="color:white; background-color:#E60F05; text-align:center; font-size:10px; width:200px; margin:auto; border-radius:5px;"><i class="fa-solid fa-triangle-exclamation"></i> Wait for <%= @league.creator.first_name %> to start the league<i class="fa-solid fa-triangle-exclamation"></i></p>
     <% end %>
 
     <% if @league.creator == current_user && @league.matches.empty? && @league.users.size >2%>
@@ -18,26 +24,33 @@
     <% end %>
   </div>
 </div>
+  <div class="table-container">
+    <table class="table table-striped table-hover" style="background-color:#ffffff; border-radius:10px; overflow: hidden">
+      <thead class="thead-light">
+        <tr>
+          <th scope="col">#</th>
+          <th style=' text-align:center' scope="col">Players</th>
+          <th scope="col">Played</th>
+          <th scope="col">Won</th>
+          <th scope="col">Points</th>
 
-<table>
-  <tr>
-    <th class ="infos-table-league-1">#</th>
-    <th class ="infos-table-league-1">Players</th>
-    <th class ="infos-table-league-1">Played</th>
-    <th class ="infos-table-league-1">Won</th>
-    <th class ="infos-table-league-1">Points</th>
-  </tr>
-  <% i = 1 %>
-  <% @leaderboard_players.order("points DESC").each do |player| %>
-    <tr>
-      <td class ="infos-table-league-2"><%= i %></td>
-      <td><%= player.first_name %> <%= player.last_name %></td>
-      <% u_l = @league.user_leagues.where("user_id = #{player.id}").first %>
-      <% u_m = @league.matches.where("(player1_id = #{player.id} OR player2_id = #{player.id}) AND winner_id IS NOT NULL") %>
-      <td class="infos-table-league-3"><%= u_m.count %></td>
-      <td class="infos-table-league-3"><%= u_l.points / 3 %></td>
-      <td class="infos-table-league-3"><%= u_l.points %></td>
-    </tr>
-    <% i += 1 %>
-  <% end %>
-</table>
+        </tr>
+      </thead>
+      <tbody>
+        <% i = 1 %>
+        <% @leaderboard_players.order("points DESC").each do |player| %>
+          <tr>
+          <th style=' text-align:center' scope="row"><%= i %></th>
+          <td style=' text-align:center'><%= player.first_name %> <%= player.last_name %></td>
+          <% u_l = @league.user_leagues.where("user_id = #{player.id}").first %>
+          <% u_m = @league.matches.where("(player1_id = #{player.id} OR player2_id = #{player.id}) AND winner_id IS NOT NULL") %>
+          <td style=' text-align:center'><%= u_m.count %></td>
+          <td style=' text-align:center'><%= u_l.points / 3 %></td>
+          <td style=' text-align:center'><%= u_l.points %></td>
+          </tr>
+        <% i += 1 %>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+

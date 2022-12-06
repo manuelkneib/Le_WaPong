@@ -1,5 +1,5 @@
 .backlink {
-  text-align: left;
+  // text-align: left;
   color: white;
 }
 
@@ -48,32 +48,22 @@
   box-shadow: 1px 1px 7px lightgray;
 }
 
-.table{
-  max-width: 80vw;
-  margin-left: 30px;
+.table-container {
+  background-color: #D3D3D3;
+  margin: 10px 20px;
+  padding: 5px;
+  display: flex;
+  border-radius: 10px;
 }
 
-table {
-  margin-top: 20px;
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
+.table {
+  margin-bottom: 0!important;
+  }
+  
+tbody tr:first-child {
+  background: #aff9b4;
 }
 
-td, th {
-  border: 1px solid #253244;
-  text-align: center;
-  padding: 6px;
-  font-size: 13px;
-}
-
-tr:nth-child(even) {
-  background-color: #e6e0de;
-  font-size: 13px;
-  color: #253244;
-}
-
-tr:nth-child(odd) {
-  background-color: #B5B5B5;
-  color: #253244;
+tbody tr:last-child {
+  background: #ff9393;
 }

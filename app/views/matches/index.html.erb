@@ -7,33 +7,42 @@
     <a href="/leagues/<%=@league.id%>/matches" class="m-slider-matches"><i class="fa-solid fa-user-group"></i></a>
   </div>
 
-<div class="overall-matches">
+
+
   <% @max_round.times do |round| %>
+<div class="overall-matches">
     <% round += 1 %>
-    <div class="form-action"></div>
-    <div class=round data-controller="pick-winner">
-      <div class="round-num">
-        <p class="lead"><strong>ROUND <%= round %></strong></p>
-      </div>
-      <% @matches.where(round: round).each do |match| %>
-        <div class="match align-items-center">
-          <div>
-            <%= link_to setwinner_match_path(match, winner_id: match.player1), data: { turbo_method: :post }, style:"text-decoration:none" do %>
-              <div class="player1 <%= "btn winner" if match.player1 == match.winner %>" data-pick-winner-target="player" data-action="click->pick-winner#send">
-                <%= "#{match.player1.first_name} #{match.player1.last_name}" %>
-              </div>
-            <% end %>
-          </div>
-          <div class="vs">vs</div>
-          <div>
-            <%= link_to setwinner_match_path(match, winner_id: match.player2), data: { turbo_method: :post }, style:"text-decoration:none" do %>
-              <div class="player2 <%= "btn winner" if match.player2 == match.winner %>" data-pick-winner-target="player" data-action="click->pick-winner#send">
-                <%= "#{match.player2.first_name} #{match.player2.last_name}" %>
-              </div>
-            <% end %>
-          </div>
+    <div class="accordion accordion-flush" id="accordionFlushExample">
+      <div class="round accordion-item" style="border-radius: 5px">
+        <div class="round-num">
+          <h2 class="lead accordion-header" id="flush-heading<%= round %>">
+            <button class="accordion-button collapsed" id="accordion-btn" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse<%= round %>" aria-expanded="true" aria-controls="flush-collapse<%= round %>">
+              <strong>ROUND <%= round %></strong>
+            </button>
+          </h2>
         </div>
-      <% end %>
+        <% @matches.where(round: round).each do |match| %>
+        <div id="flush-collapse<%= round %>" class="accordion-collapse collapse" aria-labelledby="flush-heading<%= round %>" data-bs-parent="#accordionFlushExample">
+            <div class="match d-flex justify-content-between align-items-center position-relative accordion-body">
+              <div>
+                <%= link_to setwinner_match_path(match, winner_id: match.player1), data: { turbo_method: :post }, style:"text-decoration:none" do %>
+                  <div class="player1 <%= "btn btn-success match-winner" if match.player1 == match.winner %>">
+                    <%= "#{match.player1.first_name} #{match.player1.last_name}" %>
+                  </div>
+                <% end %>
+              </div>
+              <div class="vs">vs</div>
+              <div>
+                <%= link_to setwinner_match_path(match, winner_id: match.player2), data: { turbo_method: :post }, style:"text-decoration:none" do %>
+                  <div class="player2 <%= "btn btn-success match-winner" if match.player2 == match.winner %>" data-pick-winner-target="player" data-action="click->pick-winner#send">
+                    <%= "#{match.player2.first_name} #{match.player2.last_name}" %>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+        </div>
+        <% end %>
+      </div>
     </div>
-  <% end %>
 </div>
+  <% end %>
