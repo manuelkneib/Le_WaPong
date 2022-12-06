@@ -47,3 +47,11 @@
   border: 1px solid white;
   box-shadow: 1px 1px 7px lightgray;
 }
+
+tbody tr:first-child {
+  background: #aff9b4;
+}
+
+tbody tr:last-child {
+  background: #ff9393;
+}
