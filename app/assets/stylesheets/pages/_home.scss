@@ -3,15 +3,55 @@ body {
   background-color: #253244;
 }
 
+.box-homepage {
+position: relative;
+width: 80vw;
+height: 80vh;
+display: flex;
+justify-content: center;
+-ms-align-items: center;
+align-items: center;
+background-color: $redorange;
+overflow: hidden;
+z-index: 0;
+margin-left: 10%;
+margin-top: 15%;
+border-radius: 15px;
+}
+
+.box-homepage::before {
+  content: '';
+  position: absolute;
+  width: 170px;
+  height: 140%;
+  background: $white;
+  animation: rotate 4s linear infinite;
+}
+
+.box-homepage::after {
+  content: '';
+  position: absolute;
+  background: $blue;
+  inset: 5px;
+  border-radius: 16px;
+}
+
+@keyframes rotate {
+  from {
+    transforme: rotate(0deg)
+  }
+  to {
+    transform: rotate(360deg)
+  }
+}
 
 .navbar-brand {
  margin-left: 155px;
 }
 
 .logohome {
-  padding-top: 100px;
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
+  position: relative;
+  left: 25px;
   width: 70%;
+  z-index: 1;
 }
