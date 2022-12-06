@@ -17,7 +17,6 @@ class LeaguesController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
-
     UserLeague.create(league: @league, user: current_user, points: 0)
   end
 
@@ -25,12 +24,10 @@ class LeaguesController < ApplicationController
     @league = League.find(params[:id])
     set_points
     @leaderboard_players = User.joins(:user_leagues).where("user_leagues.league_id = #{@league.id}")
-
   end
 
   def destroy
     @league.destroy
-
     redirect_to leagues_path, status: :see_other
   end
 
@@ -73,14 +70,12 @@ class LeaguesController < ApplicationController
               round_num = 1
             end
           end
-
           match = Match.new(player1: player, player2: adversary, round: round_num)
           match.league = @league
           match.save
         end
       end
     end
-
     redirect_to league_matches_path(@league)
   end
 
