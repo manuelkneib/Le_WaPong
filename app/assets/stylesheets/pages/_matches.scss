@@ -34,6 +34,8 @@
 }
 
 .round {
+  display: flex;
+  flex-direction: column;
   background-color: white;
   border-radius: 5px;
   padding: 15px;
@@ -51,11 +53,26 @@
 
 .player1 {
   display: flex;
+  color:#6C6C6C;
+  text-decoration: none;
 }
 
 .player2 {
   display: flex;
+  color:#6C6C6C;
+  text-decoration: none;
 }
+
+
+.player2:onclick {
+  color: white;
+  text-decoration: none;
+}
+
+.round-num {
+  align-self: center;
+}
+
 
 .fa-rotate-right {
   color: #6C6C6C;
