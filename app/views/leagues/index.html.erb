@@ -14,7 +14,7 @@
   <div class="everything ">
     <div class="your-tournament">
       <h3> Your Leagues</h3>
-      <% @leagues.each do |league| %>
+      <% @leagues.order("created_at DESC").each do |league| %>
         <div class="position-relative">
           <%= link_to league_path(league), class: "text-decoration-none" do %>
             <div class="leagues" style="background: white;">
