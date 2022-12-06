@@ -10,6 +10,8 @@
   align-items: flex-start;
   margin-left: 25px;
   margin-right: 25px;
+  border: 3px solid orange;
+  box-shadow: 0 3px 10px white;
 }
 
 .avatar-index {
@@ -36,16 +38,15 @@
   margin: auto;
 }
 
-.your-tournament {
-  width: 100%;
+.your-leagues {
+
   margin: 40px 25px 50px 25px;
-  background-color: #e6e0de;;
-  border-radius: 10px;
+  background-color: $blue;
   text-align: center;
   padding: 5px;
-  color: #253244;
-  box-shadow: 0 3px 10px white;
-  border: 2px solid white;
+  color: $white;
+  border-left: 2px solid grey;
+  border-right: 2px solid grey;
  }
 
  .league {
@@ -56,6 +57,7 @@
  .new-tournament {
   color:white;
   margin-top: 25px;
+
  }
 
  .btn-flat {
@@ -109,6 +111,5 @@ border: 1px solid $redorange;
 }
 
 .everything {
-
-  margin-right: 43px;
+  margin: auto;
 }

@@ -14,8 +14,8 @@
     </div>
 
   <div class="everything">
-    <div class="your-tournament">
-      <h3> Your Leagues</h3>
+    <div class="your-leagues">
+      <h3 class="mt-4 mb-4"> Your Leagues</h3>
 
       <% @leagues.each do |league| %>
         <div class="position-relative">
@@ -31,14 +31,13 @@
                   <%= icon_tag(league) %>
                 </div>
 
-
               </div>
             </div>
           <% end %>
           <div class="league-index-details position-absolute" style="top: 11px; right: 33px;">
             <% if league.creator == current_user %>
 
-              <div class="d-flex flex-column mt-4">
+              <div class="d-flex flex-column mt-5">
                 <%= link_to "X", league_path(league), class: "btn-cancel", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to cancel your league?" } %>
               </div>
 
