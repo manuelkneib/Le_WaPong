@@ -14,7 +14,7 @@
     <% end %>
 
     <% if @league.creator == current_user && @league.matches.empty? && @league.users.size >2%>
-      <div class="btn-set-matches">
+      <div class="btn-set-matches mb-3">
         <%= link_to "Start League!", league_matches_path(@league), data: { turbo_method: :post } %>
       </div>
     <% end %>

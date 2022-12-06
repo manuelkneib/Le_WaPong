@@ -29,6 +29,7 @@
       <% if controller_name!="pages" && action_name!="home" %>
         <%= render "shared/navbar" %>
       <% end %>
+      <%= render "shared/flashes" %>
 
       <main id="main-content">
         <%= yield %>
