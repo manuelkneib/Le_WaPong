@@ -26,7 +26,12 @@
                 <p class="p-creator-league">
                   Created by <strong><%= league.creator == current_user ? "you" : league.creator.first_name %></strong> on <%= league.creator.created_at %>
                 </p>
-                <p class="p-sport-league"><%= league.sport %></p>
+                <div class="icon-tag d-flex">
+                  <p class="p-sport-league"><%= league.sport %></p>
+                  <%= icon_tag(league) %>
+                </div>
+
+
               </div>
             </div>
           <% end %>
