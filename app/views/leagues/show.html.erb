@@ -28,6 +28,7 @@
       <thead class="thead-light">
         <tr>
           <th scope="col">#</th>
+          <th scope="col"></th>
           <th style=' text-align:center' scope="col">Players</th>
           <th scope="col">Played</th>
           <th scope="col">Won</th>
@@ -39,12 +40,14 @@
         <% @leaderboard_players.order("points DESC").each do |player| %>
           <tr>
           <th style='text-align:center' scope="row"><%= i %></th>
-          <td style='text-align:center'><%= player.first_name %> <%= player.last_name %>
+          <td>
             <% if (@league.creator == current_user || current_user == player) && @league.matches.empty? %>
               <div class="d-flex flex-column">
                 <%= link_to "X", delete_player_league_path(@league, player_id: player.id), class: "btn-cancel", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove this player from your league?" } %>
               </div>
             <% end %>
+          </td>
+          <td style='text-align:center'><%= player.first_name %> <%= player.last_name %>
           </td>
           <% u_l = @league.user_leagues.where("user_id = #{player.id}").first %>
           <% u_m = @league.matches.where("(player1_id = #{player.id} OR player2_id = #{player.id}) AND winner_id IS NOT NULL") %>
