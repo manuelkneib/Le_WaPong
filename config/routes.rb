@@ -13,8 +13,10 @@ Rails.application.routes.draw do
     resources :matches, only: %i[new create index]
     member do
       post "setmatches", to: "leagues#setmatches"
+      delete "delete_player", to: "user_leagues#destroy"
     end
   end
+
 
   get "leagues/:id/invitation", to: "leagues#invitation", as: :invitation
   # post "leagues/:id/invitation", to: "user_leagues#create",
