@@ -22,5 +22,6 @@ class UserLeaguesController < ApplicationController
 
   def set_user_league
     @user_league = UserLeague.find(params[:id])
+    raise
   end
 end

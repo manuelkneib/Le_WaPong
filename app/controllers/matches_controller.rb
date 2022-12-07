@@ -24,7 +24,7 @@ class MatchesController < ApplicationController
     match.winner = User.find(params[:winner_id])
     match.save
 
-    redirect_to league_matches_path(match.league)
+    # redirect_to league_matches_path(match.league)
   end
 
   def reload_round
