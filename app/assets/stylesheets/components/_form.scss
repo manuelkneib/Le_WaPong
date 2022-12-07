@@ -23,14 +23,12 @@
 }
 
 .form-league {
-  max-height: 60vh;
   background-color: lightgrey;
   align-items: center;
   margin-top: 70px;
-  margin-left: 10px;
-  margin-right: 10px;
-  border-radius: 10px 10px 0px 0px;
-  padding-top: 20px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  padding-top: 10px;
   box-shadow: 0 3px 10px white;
   border: 2px solid white;
 
@@ -42,7 +40,7 @@
 
 #form-size{
   height: 45vh;
-  width: 90vw;
+
 }
 
 .form_info {
