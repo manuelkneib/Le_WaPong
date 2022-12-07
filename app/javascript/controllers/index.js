@@ -9,3 +9,6 @@ application.register("clipboard", ClipboardController)
 
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
+
+import InputRoundController from "./input_round_controller"
+application.register("input-round", InputRoundController)
