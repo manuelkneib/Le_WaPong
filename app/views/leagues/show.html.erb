@@ -1,9 +1,17 @@
 <%= render "shared/league_info" %>
 
-    <div class="league-slider border-top mb-2">
-      <a href="/leagues/<%=@league.id%>" class="l-slider-leaderboard"><i class="fa-solid fa-table-list"></i></a>
-      <a href="/leagues/<%=@league.id%>/matches" class="l-slider-matches"><i class="fa-solid fa-user-group"></i></a>
-    </div>
+  <div class="league-slider">
+    <%= link_to league_path(@league), class: "l-slider-leaderboard text-decoration-none" do %>
+      <i class="fa-solid fa-table-list"></i>
+    <% end %>
+    <% if @league.matches.present? %>
+      <%= link_to league_matches_path(@league), class: "l-slider-matches", id: "defunc-slider" do %>
+        <i class="fa-solid fa-user-group"></i>
+      <% end %>
+    <% else %>
+      <span class="l-slider-matches text-black"><i class="fa-solid fa-user-group"></i></span>
+    <% end %>
+  </div>
 
   <div class="conditional-league-items">
     <% if @league.users.size <3 %>
