@@ -8,7 +8,7 @@
           <%= @league.name %>
         </h3>
         <h3 class="text-center mb-3" style="font-size:18px;"> Competing in:
-          <div class="" >
+          <div class="sport-info mt-3 mb-3" >
           <strong><%= @league.sport %></strong>
           <%= icon_tag(@league) %>
           </div>
@@ -18,15 +18,13 @@
         </h3>
 
         <% if @league.matches.empty? && @league.creator == current_user %>
-          <div class="conditional-invites mt-3">
-            <p>
+          <div class="conditional-invites mt-4">
             <div class="input-group" data-controller="clipboard" data-clipboard-feedback-text-value="Copied!" style="justify-content: center;">
               <input type="hidden" class="form-control" data-clipboard-target="input" type="text" value="<%= invitation_url %>" readonly>
               <div class="input-group-append">
-              <button id="copy-button" class="btn btn-outline-primary" style="width:220px; color:white;" data-action="click->clipboard#copy">Click to copy the invite link and send it to your friends</button>
+              <button id="copy-button" class="btn btn-outline-primary" style="width:220px; color:grey;" data-action="click->clipboard#copy">Click to copy the invite link and send it to your friends</button>
               </div>
             </div>
-            </p>
           </div>
         <% end %>
         </div>

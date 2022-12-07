@@ -4,35 +4,43 @@
       <div class="infos-index">
         <div class="personnal-infos-index">
           <h1>Hello <%= current_user.first_name %> !</h1>
-          <h3 class="text-infos-index ms-4 me-4"> Here you can create your own league and see all the leagues you are in</h3>
+          <h3 class="text-infos-index ms-4 me-4"> Here you can create your league and see all leagues you are in.</h3>
         </div>
         <div class="new-tournament" >
           <a class="btn btn-flat create-tournament mt-4 mb-4" href="/leagues/new">Create New League</a>
         </div>
       </div>
     </div>
-  <div class="everything ">
-    <div class="your-tournament">
-      <h3> Your Leagues</h3>
-      <% @leagues.order("created_at DESC").each do |league| %>
+    
+  <div class="everything">
+    <div class="your-leagues">
+      <h3 class="mt-4 mb-4"> Your Leagues</h3>
+     <% @leagues.order("created_at DESC").each do |league| %>
+
         <div class="position-relative">
           <%= link_to league_path(league), class: "text-decoration-none" do %>
-            <div class="leagues" style="background: white;">
+            <div class="leagues">
               <div style="display: grid;justify-items: start;">
-                <p class="p-name-league"><%= league.name %></p>
-                <p class="p-creator-league">
-                  Created by <strong><%= league.creator == current_user ? "you" : league.creator.first_name %></strong> <%= time_ago_in_words(league.created_at) %> ago
+
+                <div class="mx-auto">
+                  <p class="p-name-league"><%= league.name %></p>
+                </div>
+                <p class="creator-league">
+                   Created by <strong><%= league.creator == current_user ? "you" : league.creator.first_name %></strong> <%= time_ago_in_words(league.created_at) %> ago
+
                 </p>
                 <div class="icon-tag d-flex">
-                  <p class="p-sport-league"><%= league.sport %></p>
-                  <%= icon_tag(league) %>
+                  <p class="sport-league">
+                  <%= league.sport %></p>
+                 <%= icon_tag(league) %>
                 </div>
+
               </div>
             </div>
           <% end %>
           <div class="league-index-details position-absolute" style="top: 11px; right: 33px;">
             <% if league.creator == current_user %>
-              <div class="d-flex flex-column mt-4">
+              <div class="d-flex flex-column mt-2">
                 <%= link_to "X", league_path(league), class: "btn-cancel", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to cancel your league?" } %>
               </div>
             <% end %>

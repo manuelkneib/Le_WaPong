@@ -1,7 +1,7 @@
 .leagues {
-  border-radius: 10px;
+  border-radius: 5px;
   padding: 15px;
-  color: #253244;
+  color: $white;
   margin-bottom: 20px;
   margin-top: 5px;
   font-weight: bold;
@@ -10,6 +10,9 @@
   align-items: flex-start;
   margin-left: 25px;
   margin-right: 25px;
+  border: 5px solid rgb(255, 94, 0);
+  box-shadow: 0 3px 10px white;
+
 }
 
 .avatar-index {
@@ -36,15 +39,15 @@
   margin: auto;
 }
 
-.your-tournament {
-  width: 100%;
-  background-color: #e6e0de;;
-  border-radius: 10px;
+
+.your-leagues {
+  margin: 20px 25px 50px 25px;
+  background-color: $blue;
   text-align: center;
   padding: 5px;
-  color: #253244;
-  box-shadow: 0 3px 10px white;
-  border: 2px solid white;
+  color: $white;
+  border-top: 2px solid $white;
+
  }
 
  .league {
@@ -55,6 +58,7 @@
  .new-tournament {
   color:white;
   margin-top: 25px;
+
  }
 
  .btn-flat {
@@ -69,12 +73,10 @@
 }
 
 .btn-cancel {
-background: $white;
-color: $redorange;
-border-radius: 5px;
+color: $red;
 text-decoration: none;
 padding: 1px 4px 0px ;
-border: 1px solid $redorange;
+
 }
 
 .btn-flat:hover {
@@ -84,20 +86,22 @@ border: 1px solid $redorange;
 
 .link-index {
   font-weight: bold;
-  color: #E60F05;
+  color: #e60f05;
 }
 
 .p-name-league {
-  color: #E60F05;
+  color: $white;
   font-weight: bolder;
-  font-size:17px;
+  font-size:20px;
 }
 
-.p-sport-league {
-  font-size: 14px;
+.sport-league {
+  font-size: 18px;
+  padding-right: 10px;
+  margin-left: 20px;
 }
 
-.p-creator-league {
+.creator-league {
   font-weight: 100;
   font-size: 13px;
   margin-top: -12px;
@@ -105,5 +109,10 @@ border: 1px solid $redorange;
 
 .text-infos-index {
   font-weight: 200;
+}
+
+
+.everything {
+  margin: auto;
 }
 
