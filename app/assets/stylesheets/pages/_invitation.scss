@@ -1,5 +1,24 @@
 
+
+
 .module-invite {
   color: white;
   padding: 10px;
+}
+
+.btn-accept {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 20px;
+  transition: background 0.3s ease;
+  margin: auto;
+  background: linear-gradient(0deg, #FD1015 0%, #fb4b02 100%);
+  border: 3px solid white;
+  box-shadow: 1px 1px 7px lightgray;
+  margin-top: 15px;
+
+  a{
+    font-size: 20px;
+    text-decoration: none;
+  }
 }
