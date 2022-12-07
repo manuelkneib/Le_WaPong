@@ -122,22 +122,22 @@ padding: 1px 4px 0px ;
 }
 
 .accordion-league-item {
-  border: var(--bs-accordion-border-width) solid;
-  background-color: #263343!important;
+  border: hidden!important;
+  background-color: $blue!important;
 }
 
 .league-accordion-button{
-  width: 245px;
+  min-width: 37vh;
   font-size: x-large;
   box-shadow: 0 0 !important;
-  color: gray!important;
-  background-color: #263343!important;
+  color: white!important;
+  background-color: $blue!important;
 }
 
 .league-accordion-button collapsed{
   font-size: x-large;
-  color: gray!important;
-  background-color: #263343!important;
+  color: white!important;
+  background-color: $blue!important;
 }
 .accordion-league-header {
   border-bottom: 0px!important;
@@ -145,4 +145,12 @@ padding: 1px 4px 0px ;
 
 .accordion-button:not(.collapsed)::after {
   background-image: var(--bs-accordion-btn-icon);
+}
+
+.text-center {
+  color: white;
+}
+
+#copy-button {
+  color: white!important;
 }
