@@ -10,8 +10,8 @@
   align-items: flex-start;
   margin-left: 25px;
   margin-right: 25px;
-  border: 5px solid rgb(255, 94, 0);
-  box-shadow: 0 3px 10px white;
+  border: 1px solid grey;
+  box-shadow: 0 3px 10px black;
 
 }
 
@@ -46,7 +46,7 @@
   text-align: center;
   padding: 5px;
   color: $white;
-  border-top: 2px solid $white;
+  border-top: 1px solid grey;
 
  }
 
@@ -116,3 +116,33 @@ padding: 1px 4px 0px ;
   margin: auto;
 }
 
+
+.accordion-league {
+  padding: 0px!important;
+}
+
+.accordion-league-item {
+  border: var(--bs-accordion-border-width) solid;
+  background-color: #263343!important;
+}
+
+.league-accordion-button{
+  width: 245px;
+  font-size: x-large;
+  box-shadow: 0 0 !important;
+  color: gray!important;
+  background-color: #263343!important;
+}
+
+.league-accordion-button collapsed{
+  font-size: x-large;
+  color: gray!important;
+  background-color: #263343!important;
+}
+.accordion-league-header {
+  border-bottom: 0px!important;
+}
+
+.accordion-button:not(.collapsed)::after {
+  background-image: var(--bs-accordion-btn-icon);
+}

@@ -6,10 +6,9 @@
 .league-slider {
   text-align: center;
   text-decoration: none;
-  margin-top: 25px;
-  margin-bottom: 20px;
+  padding: 20px;
   .l-slider-leaderboard {
-    background: linear-gradient(0deg, #FD1015 0%, #fb4b02 100%);
+    background: orangered;
     padding: 1px 20px;
     border: 3px solid $light;
     border-top-left-radius: 10px;
@@ -27,23 +26,25 @@
 }
 
 .conditional-invites {
-  border: 1px solid $white;
-  border-radius: 20px;
   color: $white;
+  box-shadow: 1px 3px 5px black;
+  margin-top: 5px;
+  border: 1px solid black;
+  max-width: 60%;
+  justify-content: center;
 }
 
 .btn-set-matches {
   color: white;
   padding: 8px 15px;
   border-radius: 20px;
-  background: #E60F05;
   transition: background 0.3s ease;
   text-align: center;
   width: 140px;
   display: block;
   margin: auto;
   margin-top: 15px;
-  background: linear-gradient(0deg, #FD1015 0%, #fb4b02 100%);
+  background: orangered;
   border: 1px solid white;
   box-shadow: 1px 1px 7px lightgray;
 }
@@ -59,7 +60,7 @@
 .table {
   margin-bottom: 0!important;
   }
-  
+
 tbody tr:first-child {
   background: #aff9b4;
 }

@@ -1,6 +1,4 @@
-<div class="container">
-
-  <%= render "shared/league_info" %>
+<%= render "shared/league_info" %>
 
   <div class="league-slider">
     <%= link_to league_path(@league), class: "l-slider-leaderboard text-decoration-none" do %>
@@ -15,9 +13,9 @@
     <% end %>
   </div>
 
-  <div class="conditional-league-items mb-3">
+  <div class="conditional-league-items">
     <% if @league.users.size <3 %>
-      <p style="color:white; background-color:#E60F05; text-align:center; font-size:10px; width:290px; margin:auto; border-radius:5px;"><i class="fa-solid fa-triangle-exclamation"></i> Your league needs three or more players before you can start<i class="fa-solid fa-triangle-exclamation"></i></p>
+      <p style="color:red; text-align:center; font-size:10px; width:290px; margin:auto; border-radius:5px;"><i class="fa-solid fa-triangle-exclamation"></i> Your league needs three or more players before you can start<i class="fa-solid fa-triangle-exclamation"></i></p>
     <% end %>
 
     <% if @league.users.size >2 && @league.creator != current_user && @league.matches.empty? %>
