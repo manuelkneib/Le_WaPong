@@ -1,8 +1,8 @@
 class UserLeaguesController < ApplicationController
   skip_before_action :authenticate_user!
-  before_action :set_user_league
 
   def create
+    @league = League.find(params[:league_id])
     if !current_user
       session[:attendee] = true
       redirect_to user_session_path
@@ -15,12 +15,7 @@ class UserLeaguesController < ApplicationController
   end
 
   def destroy
+    @user_league = UserLeague.find(params[:user_league_id])
     @user_league.destroy
-  end
-
-  private
-
-  def set_user_league
-    @user_league = UserLeague.find(params[:id])
   end
 end
