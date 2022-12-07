@@ -14,13 +14,13 @@
 
   <div class="everything">
     <div class="your-leagues">
-      <h3 class="mt-4 mb-4"> Your Leagues</h3>
+      <h2 class="mt-4 mb-4"> Your Leagues</h2>
      <% @leagues.order("created_at DESC").each do |league| %>
 
         <div class="position-relative">
           <%= link_to league_path(league), class: "text-decoration-none" do %>
             <div class="leagues">
-              <div style="display: grid;justify-items: start;">
+              <div style="display: grid">
 
                 <div class="mx-auto">
                   <p class="p-name-league"><%= league.name %></p>
@@ -29,7 +29,7 @@
                    Created by <strong><%= league.creator == current_user ? "you" : league.creator.first_name %></strong> <%= time_ago_in_words(league.created_at) %> ago
 
                 </p>
-                <div class="icon-tag d-flex">
+                <div class="icon-tag d-flex justify-content-between">
                   <p class="sport-league">
                   <%= league.sport %></p>
                  <%= icon_tag(league) %>
