@@ -9,9 +9,9 @@
 require "faker"
 
 puts "Destroying previous seeds"
-User.destroy_all
-League.destroy_all
 Match.destroy_all
+League.destroy_all
+User.destroy_all
 puts "__________________"
 puts ""
 
