@@ -3,10 +3,13 @@
 </div>
 
   <div class="match-slider">
-    <a href="/leagues/<%=@league.id%>" class="m-slider-leaderboard"><i class="fa-solid fa-table-list"></i></a>
-    <a href="/leagues/<%=@league.id%>/matches" class="m-slider-matches"><i class="fa-solid fa-user-group"></i></a>
+    <%= link_to league_path(@league), class: "m-slider-leaderboard text-decoration-none" do %>
+      <i class="fa-solid fa-table-list"></i>
+    <% end %>
+    <%= link_to league_matches_path(@league), class: "m-slider-matches" do%>
+      <i class="fa-solid fa-user-group"></i>
+    <% end %>
   </div>
-
 
 <div class="matches-container">
   <% @max_round.times do |round| %>
