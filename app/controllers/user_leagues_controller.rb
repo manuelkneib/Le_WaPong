@@ -15,7 +15,10 @@ class UserLeaguesController < ApplicationController
   end
 
   def destroy
-    @user_league = UserLeague.find(params[:user_league_id])
+    @league = League.find(params[:id])
+    @user_league = UserLeague.find_by(league_id: params[:id], user_id: params[:player_id])
     @user_league.destroy
+
+    redirect_to league_path(@league), status: :see_other
   end
 end
