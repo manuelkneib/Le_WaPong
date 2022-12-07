@@ -1,32 +1,38 @@
 <a href="/leagues"><i class="fa-solid fa-chevron-left"></i></a>
-  <div class="container" style="margin-top: 30px; width: 95%;">
-    <div class="module-wrapper">
-      <div class="module">
-        <div class="container">
+  <div class="container league-container" style="margin-top: 30px; width: 95%;">
+    <div class="module-wrapper ">
+      <div class="module accordion accordion-league" id="accordionExample">
+        <div class="container accordion-item accordion-league-item">
 
-        <h3 class="text-center mb-3">
-          <%= @league.name %>
+        <h3 class="accordion-header accordion-league-header" id="headingOne">
+          <button class="accordion-button league-accordion-button <%= "collapsed" if @league.matches.present? %>" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+            <%= @league.name %>
+          </button>
         </h3>
-        <h3 class="text-center mb-3" style="font-size:18px;"> Competing in:
-          <div class="sport-info mt-3 mb-3" >
-          <strong><%= @league.sport %></strong>
-          <%= icon_tag(@league) %>
-          </div>
-        </h3>
-        <h3 class="text-center" style="font-size:18px;"> Organized by:
-          <strong><%= @league.creator.first_name %> <%= @league.creator.last_name %></strong>
-        </h3>
+          <div id="collapseOne" class="accordion-collapse collapse <%= "show" if !@league.matches.present? %>" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <h3 class="text-center mb-3" style="font-size:18px;"> Competing in:
+                <div class="sport-info mt-3 mb-3" >
+                <strong><%= @league.sport %></strong>
+                <%= icon_tag(@league) %>
+                </div>
+              </h3>
+              <h3 class="text-center" style="font-size:18px;"> Organized by:
+                <strong><%= @league.creator.first_name %> <%= @league.creator.last_name %></strong>
+              </h3>
 
-        <% if @league.matches.empty? && @league.creator == current_user %>
-          <div class="conditional-invites mt-4">
-            <div class="input-group" data-controller="clipboard" data-clipboard-feedback-text-value="Copied!" style="justify-content: center;">
-              <input type="hidden" class="form-control" data-clipboard-target="input" type="text" value="<%= invitation_url %>" readonly>
-              <div class="input-group-append">
-              <button id="copy-button" class="btn btn-outline-primary" style="width:220px; color:grey;" data-action="click->clipboard#copy">Click to copy the invite link and send it to your friends</button>
-              </div>
+              <% if @league.matches.empty? && @league.creator == current_user %>
+                <div class="conditional-invites mt-4">
+                  <div class="input-group" data-controller="clipboard" data-clipboard-feedback-text-value="Copied!" style="justify-content: center;">
+                    <input type="hidden" class="form-control" data-clipboard-target="input" type="text" value="<%= invitation_url %>" readonly>
+                    <div class="input-group-append">
+                    <button id="copy-button" class="btn btn-outline-primary" style="width:220px; color:grey;" data-action="click->clipboard#copy">Click to copy the invite link and send it to your friends</button>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
             </div>
           </div>
-        <% end %>
         </div>
       </div>
     </div>
