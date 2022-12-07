@@ -116,3 +116,28 @@ padding: 1px 4px 0px ;
   margin: auto;
 }
 
+.accordion-league {
+  padding: 0px!important;
+}
+
+.accordion-league-item {
+  border: var(--bs-accordion-border-width) solid;
+  background-color: #263343!important;
+}
+
+.league-accordion-button{
+  font-size: x-large;
+
+  color: gray!important;
+  background-color: #263343!important;
+}
+
+.league-accordion-button collapsed{
+  font-size: x-large;
+
+  color: gray!important;
+  background-color: #263343!important;
+}
+.accordion-league-header {
+  border-bottom: 0px!important;
+}
