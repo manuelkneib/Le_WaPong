@@ -35,6 +35,7 @@
   border-radius: 5px;
   position: relative;
 }
+
 .reload {
   position: absolute;
   top: 10px;
@@ -46,14 +47,14 @@
 .player1 {
   color:#6C6C6C;
   text-decoration: none;
-  max-width: 120px;
+  max-width: 100px;
   text-align: center;
 }
 
 .player2 {
   color:#6C6C6C;
   text-decoration: none;
-  max-width: 120px;
+  max-width: 100px;
   text-align: center;
 }
 
@@ -62,7 +63,6 @@
   left: 50%;
   transform: translate(-50%);
 }
-
 
 .player2:onclick {
   color: white;
@@ -79,7 +79,6 @@
   border-bottom: 1px solid #6c6c6c66;
 }
 
-
 .fa-rotate-right {
   color: #6C6C6C;
 }
@@ -89,8 +88,9 @@
   border-radius: 5px;
 }
 
-
 .match-winner {
-  border: 1px solid!important;
-  box-shadow: 1px 1px!important;
+  // border: 1px solid!important;
+  box-shadow: 1px 1px $light-gray!important;
+  color: $blue!important;
+  border-radius: 10px;
 }
