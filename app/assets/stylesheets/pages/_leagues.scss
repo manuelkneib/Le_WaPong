@@ -127,6 +127,7 @@ padding: 1px 4px 0px ;
 }
 
 .league-accordion-button{
+  width: 245px;
   font-size: x-large;
   box-shadow: 0 0 !important;
   color: gray!important;
@@ -145,4 +146,3 @@ padding: 1px 4px 0px ;
 .accordion-button:not(.collapsed)::after {
   background-image: var(--bs-accordion-btn-icon);
 }
-
