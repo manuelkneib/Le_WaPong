@@ -38,7 +38,7 @@
               </div>
             </div>
           <% end %>
-          <div class="league-index-details position-absolute" style="top: 11px; right: 33px;">
+          <div class="league-index-details position-absolute" style="top: 1px; right: 33px;">
             <% if league.creator == current_user %>
               <div class="d-flex flex-column mt-2">
                 <%= link_to "X", league_path(league), class: "btn-cancel", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to cancel your league?" } %>
