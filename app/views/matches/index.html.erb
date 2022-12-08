@@ -1,6 +1,5 @@
 <div class="container">
    <%= render "shared/league_info" %>
-</div>
 
   <div class="match-slider">
     <%= link_to league_path(@league), class: "m-slider-leaderboard text-decoration-none" do %>
@@ -10,6 +9,7 @@
       <i class="fa-solid fa-user-group"></i>
     <% end %>
   </div>
+</div>
 
 <div class="matches-container">
   <% @max_round.times do |round| %>

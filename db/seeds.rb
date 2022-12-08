@@ -61,9 +61,7 @@ creator = User.first.id
     end
   end
   creator += 1
-
 end
 puts "__________________"
 puts ""
-
 puts "seeding completed, let's f*cking gooooo!!!"
