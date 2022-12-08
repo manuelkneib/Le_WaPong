@@ -22,7 +22,7 @@ module IconHelper
       image_tag "pingpong_white.png"
     elsif league.sport == "Tennis"
       image_tag "tennis_white.png"
-    elsif league.sport == "Weightlift"
+    elsif league.sport == "Weightlifting"
       image_tag "weightlift_white.png"
     end
   end
