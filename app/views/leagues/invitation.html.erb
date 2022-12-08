@@ -1,19 +1,18 @@
 <%# <%= link_to "Accept", accept_invitation_path(league, user_id: current_user.id), method: "POST" %>
 
 <div class="container">
-  <a href="/leagues/<%=@league.id%>"><i class="fa-solid fa-chevron-left"></i></a>
   <div class="module-wrapper text-center">
     <div class="module">
       <div class="container">
         <div class="invtions pagegit ">
           <h3 class= "mt-5", style="color:white">Hello!</h3>
-          <p class="mb-3" style="color:white"><%= @league.creator.first_name %> <%= @league.creator.last_name %> has invited you to compete in his/her '<%= @league.name %>' league where you will be playing <%= @league.sport %>.</p>
+          <p class="mb-3" style="color:white"><%= @league.creator.first_name %> <%= @league.creator.last_name %> has invited you to compete in '<%= @league.name %>' league where you will be playing <%= @league.sport %>.</p>
           <p>
           <button class="btn-accept">
           <%= link_to "Accept", league_user_leagues_path(@league), data: {turbo_method: :post} %>
           </button>
           <p>
-          <%= link_to "Decline", "https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley" %>
+          <%= link_to "Decline", "https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley", target: :_blank, style: "text-decoration:none" %>
           </p>
 
         </div>
