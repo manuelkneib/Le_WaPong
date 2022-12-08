@@ -10,16 +10,16 @@
 
 .form-login {
   box-shadow: 0 3px 10px rgb(255, 255, 255);
-  margin-left: 5px;
   background-color: $light;
   align-items: center;
   margin-top: 40px;
-  border-radius: 10px 10px 0px 0px;
+  margin-bottom: 20px;
+  border-radius: 10px 10px 10px 10px;
   padding-top: 20px;
+  padding-bottom: 20px;
   border-top: 2px solid white;
   border-right: 2px solid white;
   border-left: 2px solid white;
-  height: 70vh;
 }
 
 .form-league {
@@ -31,7 +31,6 @@
   padding-top: 10px;
   box-shadow: 0 3px 10px white;
   border: 2px solid white;
-
 }
 
 .form-control {
@@ -39,8 +38,7 @@
 }
 
 #form-size{
-  height: 45vh;
-
+  height: 96vh;
 }
 
 .form_info {
