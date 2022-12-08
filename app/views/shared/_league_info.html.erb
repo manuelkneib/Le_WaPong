@@ -1,17 +1,20 @@
 <a href="/leagues"><i class="fa-solid fa-chevron-left m-3"></i></a>
 
+
+
 <h2 class="text-center">Players table and details
 </h2>
-  <div class="container league-container" style="margin-top: 20px; width: 95%;">
-    <div class="module-invite d-flex flex-column align-items-center ms-4 me-4"><div class="module-wrapper ">
+  <div class="container league-container" style="margin-top: 20px">
+    <div class="module-invite d-flex flex-column align-items-center ms-4 me-4 "><div class="module-wrapper ">
       <div class="module accordion accordion-league" id="accordionExample">
         <div class="container accordion-item accordion-league-item">
 
-        <div class="accordion-header accordion-league-header" id="headingOne">
-          <button class="accordion-button league-accordion-button <%= "collapsed" if @league.matches.present? %>" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-            <%= @league.name %>
-          </button>
-        </div>
+           <div class="accordion-header accordion-league-header" id="headingOne">
+            <button class="accordion-button league-accordion-button fifi <%= "collapsed" if @league.matches.present? %>" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" id="fifi">
+              <%= @league.name %>
+            </button>
+          </div>
+
 
           <div id="collapseOne" class="accordion-collapse collapse <%= "show" if !@league.matches.present? %>" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
             <div class="accordion-body">
@@ -28,13 +31,19 @@
               <% if @league.matches.empty? && @league.creator == current_user %>
                 <div class="conditional-invites mt-4">
                   <div class="input-group" data-controller="clipboard" data-clipboard-feedback-text-value="Copied!" style="justify-content: center;">
-                    <input type="hidden" class="form-control" data-clipboard-target="input" type="text" value="<%= invitation_url %>" readonly>
                     <button id="copy-button" class="btn btn-outline-primary" style="width:220px; color:grey;" data-action="click->clipboard#copy">Copy the invitation link</button>
+                  </div>
+                </div>
+                <div class="qr-code-div" style="margin-top: 25px;">
+                  <p style="color: white; text-align: center; margin-bottom: 3px;">Scan to join the tournament!</p>
+                  <div class="QR-code-invitation">
+                    <%= @svg.html_safe %>
                   </div>
                 </div>
               <% end %>
             </div>
           </div>
         </div>
+      </div>
     </div>
   </div>

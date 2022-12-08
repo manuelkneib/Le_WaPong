@@ -23,6 +23,14 @@ class LeaguesController < ApplicationController
   def show
     @league = League.find(params[:id])
     set_points
+    @qr_code = RQRCode::QRCode.new(invitation_url(@league))
+    @svg = @qr_code.as_svg(
+      offset: 0,
+      color: '000',
+      shape_rendering: 'crispEdges',
+      standalone: true,
+      module_size: 7
+    )
     @leaderboard_players = User.joins(:user_leagues).where("user_leagues.league_id = #{@league.id}")
   end
 

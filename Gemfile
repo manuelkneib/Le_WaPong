@@ -79,3 +79,4 @@ end
 
 # individual additions
 gem "faker"
+gem 'rqrcode'

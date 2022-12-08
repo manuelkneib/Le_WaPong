@@ -1,17 +1,16 @@
-<div class="container">
-   <%= render "shared/league_info" %>
+
+<%= render "shared/league_info" %>
+
+<div class="match-slider mt-3 mb-4">
+  <%= link_to league_path(@league), class: "m-slider-leaderboard text-decoration-none" do %>
+    <i class="fa-solid fa-table-list"></i>
+  <% end %>
+  <%= link_to league_matches_path(@league), class: "m-slider-matches" do%>
+    <i class="fa-solid fa-user-group"></i>
+  <% end %>
 </div>
 
-  <div class="match-slider">
-    <%= link_to league_path(@league), class: "m-slider-leaderboard text-decoration-none" do %>
-      <i class="fa-solid fa-table-list"></i>
-    <% end %>
-    <%= link_to league_matches_path(@league), class: "m-slider-matches" do%>
-      <i class="fa-solid fa-user-group"></i>
-    <% end %>
-  </div>
-
-<div class="matches-container">
+<div class="w-100">
   <% @max_round.times do |round| %>
   <div class="overall-matches">
       <% round += 1 %>
