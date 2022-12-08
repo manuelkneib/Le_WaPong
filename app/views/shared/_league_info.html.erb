@@ -1,15 +1,15 @@
 <a href="/leagues"><i class="fa-solid fa-chevron-left"></i></a>
 
-  <div class="container league-container" style="margin-top: 30px; width: 95%;">
-    <div class="module-invite d-flex flex-column align-items-center ms-4 me-4"><div class="module-wrapper ">
+  <div class="container league-container" style="margin-top: 30px">
+    <div class="module-invite d-flex flex-column align-items-center "><div class="module-wrapper ">
       <div class="module accordion accordion-league" id="accordionExample">
         <div class="container accordion-item accordion-league-item">
 
-        <h3 class="accordion-header accordion-league-header" id="headingOne">
-          <button class="accordion-button league-accordion-button <%= "collapsed" if @league.matches.present? %>" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-            <%= @league.name %>
-          </button>
-        </h3>
+          <h3 class="accordion-header accordion-league-header" id="headingOne">
+            <button class="accordion-button league-accordion-button <%= "collapsed" if @league.matches.present? %>" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+              <%= @league.name %>
+            </button>
+          </h3>
 
           <div id="collapseOne" class="accordion-collapse collapse <%= "show" if !@league.matches.present? %>" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
             <div class="accordion-body">
@@ -34,5 +34,6 @@
             </div>
           </div>
         </div>
+      </div>
     </div>
   </div>
