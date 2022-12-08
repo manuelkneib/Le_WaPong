@@ -6,7 +6,7 @@
         <div class="container accordion-item accordion-league-item">
 
           <h3 class="accordion-header accordion-league-header" id="headingOne">
-            <button class="accordion-button league-accordion-button <%= "collapsed" if @league.matches.present? %>" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+            <button class="accordion-button league-accordion-button fifi <%= "collapsed" if @league.matches.present? %>" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" id="fifi">
               <%= @league.name %>
             </button>
           </h3>
@@ -26,7 +26,6 @@
               <% if @league.matches.empty? && @league.creator == current_user %>
                 <div class="conditional-invites mt-4">
                   <div class="input-group" data-controller="clipboard" data-clipboard-feedback-text-value="Copied!" style="justify-content: center;">
-                    <input type="hidden" class="form-control" data-clipboard-target="input" type="text" value="<%= invitation_url %>" readonly>
                     <button id="copy-button" class="btn btn-outline-primary" style="width:220px; color:grey;" data-action="click->clipboard#copy">Copy the invitation link</button>
                   </div>
                 </div>
