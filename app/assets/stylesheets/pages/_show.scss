@@ -34,6 +34,7 @@
 
 .btn-set-matches {
   color: white;
+  text-decoration: none;
   padding: 8px 15px;
   border-radius: 20px;
   transition: background 0.3s ease;
@@ -41,8 +42,9 @@
   width: 140px;
   display: block;
   margin: auto;
-  margin-top: 15px;
-  background: orangered;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  background: linear-gradient(0deg, #FD1015 0%, #fb4b02 100%);
   border: 1px solid white;
   box-shadow: 1px 1px 7px lightgray;
 }
