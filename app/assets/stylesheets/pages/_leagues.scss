@@ -12,7 +12,6 @@
   margin-right: 25px;
   border: 2px solid grey;
   box-shadow: 0 3px 10px black;
-
 }
 
 .avatar-index {
@@ -38,7 +37,6 @@
   display: block;
   margin: auto;
 }
-
 
 .your-leagues {
   margin: 20px 25px 50px 25px;
@@ -76,7 +74,6 @@
 color: $red;
 text-decoration: none;
 padding: 1px 4px 0px ;
-
 }
 
 .btn-flat:hover {
@@ -111,11 +108,9 @@ padding: 1px 4px 0px ;
   font-weight: 200;
 }
 
-
 .everything {
   margin: auto;
 }
-
 
 .accordion-league {
   padding: 0px!important;
@@ -132,7 +127,6 @@ padding: 1px 4px 0px ;
   box-shadow: 0 0 !important;
   color: white!important;
   background-color: $blue!important;
-
 }
 
 .league-accordion-button collapsed{
@@ -140,6 +134,7 @@ padding: 1px 4px 0px ;
   color: white!important;
   background-color: $blue!important;
 }
+
 .accordion-league-header {
 
   text-align: center;
@@ -163,19 +158,16 @@ padding: 1px 4px 0px ;
 
 
 .accordion-league-header {
-
   min-width: 140px;
     max-width: 170px;
     margin-left: auto;
     margin-right: auto;
 }
 
+.fifi.collapsed::after {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
 
-
-  .fifi.collapsed::after {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
-  }
-
-  .fifi:not(.collapsed)::after{
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
-  }
+.fifi:not(.collapsed)::after{
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
