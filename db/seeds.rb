@@ -34,7 +34,7 @@ puts ""
 puts "Creating seed leagues, almost there..."
 puts "__________________"
 users = User.all
-sports = ["Ping Pong", "Tennis", "Darts", "Billiard", "Beer Pong", "Foosball", "Arm Wrestling", "Marbles", "Weightlifting", "Coding", "Karaoke", "Boxing"]
+sports = ["Ping Pong", "Tennis", "Darts", "Billiard", "Beer Pong", "Foosball", "Weightlifting", "Marbles", "Coding", "Karaoke", "Boxing"]
 
 creator = User.first.id
 43.times do

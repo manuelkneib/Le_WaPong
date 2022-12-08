@@ -23,7 +23,7 @@
       <div class="form-actions">
         <%= simple_form_for @league do |f| %>
           <%= f.input :name %>
-          <%= f.input :sport, :collection => ["Arm Wrestling", "Beer Pong", "Billiard", "Boxing", "Coding", "Darts", "Foosball", "Karaoke",  "Marbles", "Ping Pong", "Tennis", "Weightlifting", "Bowling", "Other"] %>
+          <%= f.input :sport, :collection => ["Beer Pong", "Billiard", "Bowling", "Boxing", "Coding", "Darts", "Foosball", "Karaoke",  "Marbles", "Ping Pong", "Tennis", "Weightlifting", "Bowling", "Other"] %>
           <div class="form-actions text-center">
             <%= f.button :submit, "Create", class: "btn btn-primary mt-5" %>
           </div>
