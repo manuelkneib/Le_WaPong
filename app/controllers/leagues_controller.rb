@@ -29,7 +29,7 @@ class LeaguesController < ApplicationController
       color: '000',
       shape_rendering: 'crispEdges',
       standalone: true,
-      module_size: 7
+      module_size: 6
     )
     @leaderboard_players = User.joins(:user_leagues).where("user_leagues.league_id = #{@league.id}")
   end
