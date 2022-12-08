@@ -26,11 +26,10 @@
 
 .conditional-invites {
   color: $white;
-  box-shadow: 1px 3px 5px black;
   margin-top: 5px;
-  border: 1px solid black;
   display: flex;
   justify-content: center;
+  border-radius: 10px;
 }
 
 .btn-set-matches {
