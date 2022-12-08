@@ -27,7 +27,7 @@
                 <div class="conditional-invites mt-4">
                   <div class="input-group" data-controller="clipboard" data-clipboard-feedback-text-value="Copied!" style="justify-content: center;">
                     <input type="hidden" class="form-control" data-clipboard-target="input" type="text" value="<%= invitation_url %>" readonly>
-                      <%= invitation_url %>
+                      <%= invitation_url %> <%= invitation_path %>
                     <button id="copy-button" class="btn btn-outline-primary" style="width:220px; color:grey;" data-action="click->clipboard#copy">Copy the invitation link</button>
                   </div>
                 </div>
