@@ -127,19 +127,22 @@ padding: 1px 4px 0px ;
 }
 
 .league-accordion-button{
-  min-width: 37vh;
+  //min-width: 30vw;
   font-size: x-large;
   box-shadow: 0 0 !important;
   color: white!important;
   background-color: $blue!important;
+
 }
 
 .league-accordion-button collapsed{
-  font-size: x-large;
+  //min-width: 30vw;
   color: white!important;
   background-color: $blue!important;
 }
 .accordion-league-header {
+
+  text-align: center;
   border-bottom: 0px!important;
 }
 
@@ -152,5 +155,14 @@ padding: 1px 4px 0px ;
 }
 
 #copy-button {
+  border: 1px solid white;
   color: white!important;
+}
+
+.accordion-league-header {
+  
+  min-width: 140px;
+    max-width: 170px;
+    margin-left: auto;
+    margin-right: auto;
 }

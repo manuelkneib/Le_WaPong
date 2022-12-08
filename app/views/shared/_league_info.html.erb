@@ -1,20 +1,22 @@
-<a href="/leagues"><i class="fa-solid fa-chevron-left"></i></a>
+<a href="/leagues"><i class="fa-solid fa-chevron-left m-3"></i></a>
 
-  <div class="container league-container" style="margin-top: 30px; width: 95%;">
+<h2 class="text-center">Players table and details
+</h2>
+  <div class="container league-container" style="margin-top: 20px; width: 95%;">
     <div class="module-invite d-flex flex-column align-items-center ms-4 me-4"><div class="module-wrapper ">
       <div class="module accordion accordion-league" id="accordionExample">
         <div class="container accordion-item accordion-league-item">
 
-        <h3 class="accordion-header accordion-league-header" id="headingOne">
+        <div class="accordion-header accordion-league-header" id="headingOne">
           <button class="accordion-button league-accordion-button <%= "collapsed" if @league.matches.present? %>" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
             <%= @league.name %>
           </button>
-        </h3>
+        </div>
 
           <div id="collapseOne" class="accordion-collapse collapse <%= "show" if !@league.matches.present? %>" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
             <div class="accordion-body">
-              <h3 class="text-center mb-3" style="font-size:18px;"> Competing in:
-                <div class="sport-info mt-3 mb-3" >
+              <h3 class="text-center mb-3" style="font-size:20px;"> Competing in:
+                <div class="sport-info mt-3 mb-3 p-2 d-flex flex-column align-items-center" >
                 <strong><%= @league.sport %></strong>
                 <%= icon_tag(@league) %>
                 </div>
