@@ -8,7 +8,7 @@ puts "__________________"
 puts ""
 
 puts "Creating seed base, just starting..."
-names = ["Ana Sousa", "Andre Pires", "Andre Bakiewicz", "Andre Marques", "Barbara Peric", "Carlos Daniel", "Catarina Estevao", "Chiara Biasi", "Dal Robinson", "Danilo Guimaraes", "Filipa Merino", "Gabriel Fernandes", "Gabriel Pereira", "Gerardo Wemans", "Guilherme Vasconcelos", "Havard Steffensen", "Henrique Albuquerque", "Ines Correia", "Joao Sanches", "Joaquim Luis", "Joe DePumpo", "Josh Merrill", "Julia Wald", "Loic Thieffry", "Lorenz Ploch", "Manuel Kneib", "Margarida Toureiro", "Miguel Figueiredo", "Miguel Silva", "Pedro Agostinho", "Ricardo Mendes", "Rita Laia", "Roel de Jong", "Rory Carter-Motley", "Ryan Hillman", "Samuel van de Ven", "Sara Schoonover", "Sara Vieira", "Diogo Telo de Castro", "Vasco Cardoso", "Vasco Correia" , "Will May", "Zoe van Perlstein" ]
+names = ["Ana Sousa", "Andre Pires", "Andre Bakiewicz", "Andre Marques", "Barbara Peric", "Carlos Silveira", "Catarina Estevao", "Chiara Biasi", "Dal Robinson", "Danilo Guimaraes", "Filipa Merino", "Gabriel Fernandes", "Gabriel Pereira", "Gerardo Wemans", "Guilherme Vasconcelos", "Havard Steffensen", "Henrique Albuquerque", "Ines Correia", "Joao Sanches", "Joaquim Luis", "Joe DePumpo", "Josh Merrill", "Julia Wald", "Loic Thieffry", "Lorenz Ploch", "Manuel Kneib", "Margarida Toureiro", "Miguel Figueiredo", "Miguel Silva", "Pedro Agostinho", "Ricardo Mendes", "Rita Laia", "Roel de Jong", "Rory Carter-Motley", "Ryan Hillman", "Samuel van de Ven", "Sara Schoonover", "Sara Vieira", "Diogo Telo de Castro", "Vasco Cardoso", "Vasco Correia" , "Will May", "Zoe van Perlstein" ]
 puts "__________________"
 puts ""
 

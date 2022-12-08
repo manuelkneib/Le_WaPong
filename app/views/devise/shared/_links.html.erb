@@ -1,9 +1,9 @@
 <%- if controller_name != 'sessions' %>
-  <%= link_to "Log in", new_session_path(resource_name), style:"color:#253244" %><br />
+  <%= link_to "Log in", new_session_path(resource_name), style:"color:#253244;" %><br />
 <% end %>
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-  <%= link_to "Sign up", new_registration_path(resource_name), style:"color:#253244" %><br />
+  <%= link_to "Sign up", new_registration_path(resource_name), class: "sign-up-link", style:"color:#253244;" %><br />
 <% end %>
 
 <%# reinstate if function to reset password is implemented later, code needs to be adapted, parts cut out for commenting ease %>
