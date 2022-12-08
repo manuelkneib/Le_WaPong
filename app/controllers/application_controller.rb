@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
   end
 
   def default_url_options
-    { host: ENV["www.lewapong.fun"] || "localhost:3000" }
+    { host: ENV["DOMAIN"] || "localhost:3000" }
   end
 
   protected
