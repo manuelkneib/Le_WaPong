@@ -29,6 +29,12 @@
                     <button id="copy-button" class="btn btn-outline-primary" style="width:220px; color:grey;" data-action="click->clipboard#copy">Copy the invitation link</button>
                   </div>
                 </div>
+                <div class="qr-code-div" style="margin-top: 25px;">
+                  <p style="color: white; text-align: center; margin-bottom: 3px;">Scan to join the tournament!</p>
+                  <div class="QR-code-invitation">
+                    <%= @svg.html_safe %>
+                  </div>
+                </div>
               <% end %>
             </div>
           </div>
