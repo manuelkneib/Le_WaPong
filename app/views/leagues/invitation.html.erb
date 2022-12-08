@@ -7,7 +7,7 @@
       <div class="container">
         <div class="invtions pagegit ">
           <h3 class= "mt-5", style="color:white">Hello!</h3>
-          <p class="mb-3" style="color:white"><%= @league.creator.first_name %> <%= @league.creator.last_name %> has invited you to compete in his/her '<%= @league.name %>' league where you will be playing <%= @league.sport %>.</p>
+          <p class="mb-3" style="color:white"><%= @league.creator.first_name %> <%= @league.creator.last_name %> has invited you to compete in '<%= @league.name %>' league where you will be playing <%= @league.sport %>.</p>
           <p>
           <button class="btn-accept">
           <%= link_to "Accept", league_user_leagues_path(@league), data: {turbo_method: :post} %>
