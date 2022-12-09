@@ -13,11 +13,11 @@ class LeaguesController < ApplicationController
     @league = League.new(league_params)
     @league.creator = current_user
     if @league.save
+      UserLeague.create(league: @league, user: current_user, points: 0)
       redirect_to league_path(@league)
     else
       render :new, status: :unprocessable_entity
     end
-    UserLeague.create(league: @league, user: current_user, points: 0)
   end
 
   def show
