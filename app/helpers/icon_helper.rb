@@ -8,6 +8,8 @@ module IconHelper
       image_tag "snooker_white.png"
     elsif league.sport == "Boxing"
       image_tag "fight_white.png"
+    elsif league.sport == "Bowling"
+      image_tag "bowling_white.png"
     elsif league.sport == "Coding"
       image_tag "coding_white.png"
     elsif league.sport == "Darts"
