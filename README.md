@@ -1,1 +1,2 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+This app was build by Ana Sousa, André Marques, Loic Thieffry and Manuel Kneib in two weeks as our final project at Le Wagon in Lisbon (Batch 1041). It's a mobile-first web-app that helps you organize league tournaments with your friends. Until December 2023 you can use it to organize yours [here](https://www.lewapong.fun).
+Le WaPong was built in Ruby on Rails using the [lewagon/rails-templates](https://github.com/lewagon/rails-templates).
